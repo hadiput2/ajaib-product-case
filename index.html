@@ -178,6 +178,77 @@
     .experience-step p { color: var(--muted); font-size: .84rem; margin: 10px 0 0; }
     .microcopy { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 14px; color: #cdd8d4; font-size: .78rem; font-style: italic; }
 
+    .activation-prototype {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-height: 650px;
+      margin-bottom: 20px;
+      padding: 30px;
+      border: 1px solid rgba(112, 166, 255, .36);
+      border-radius: 28px;
+      background: linear-gradient(145deg, #07247f 0%, #0b4df5 52%, #0a35bd 100%);
+      box-shadow: 0 30px 100px rgba(0, 33, 135, .28);
+    }
+    .activation-prototype::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, rgba(2, 12, 44, .78), rgba(3, 22, 74, .18) 48%, rgba(2, 11, 38, .25));
+      pointer-events: none;
+    }
+    .prototype-ambient { position: absolute; inset: -12%; z-index: -2; opacity: .42; filter: blur(11px); transform: scale(1.08) rotate(-2deg); pointer-events: none; }
+    .ambient-app { position: absolute; inset: 4% 7% 3% 29%; padding: 56px; border: 1px solid rgba(255,255,255,.34); border-radius: 44px; background: linear-gradient(160deg, rgba(68,143,255,.96), rgba(0,54,209,.92)); box-shadow: 0 35px 90px rgba(0,0,0,.3); }
+    .ambient-bar { width: 44%; height: 18px; border-radius: 99px; background: rgba(255,255,255,.58); }
+    .ambient-balance { width: 62%; height: 98px; margin-top: 55px; border-radius: 18px; background: rgba(255,255,255,.48); }
+    .ambient-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 34px; }
+    .ambient-actions span { height: 92px; border-radius: 20px; background: rgba(255,255,255,.42); }
+    .ambient-list { display: grid; gap: 18px; margin-top: 40px; }
+    .ambient-list span { height: 64px; border-radius: 16px; background: rgba(255,255,255,.32); }
+    .prototype-header { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 24px; align-items: start; margin-bottom: 28px; }
+    .prototype-kicker { display: block; color: #b9d2ff; font-size: .68rem; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+    .prototype-header h3 { margin-top: 6px; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1; font-weight: 500; letter-spacing: -.04em; }
+    .prototype-header p { max-width: 430px; margin: 7px 0 0; color: rgba(236,244,255,.8); font-size: .86rem; }
+    .concept-label { flex: 0 0 auto; padding: 7px 10px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; background: rgba(3,21,67,.35); color: #e7f0ff; font-size: .66rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .prototype-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 24px; align-items: stretch; }
+    .prototype-tabs { display: grid; align-content: start; gap: 9px; }
+    .prototype-tab { width: 100%; display: grid; grid-template-columns: 30px 1fr; gap: 11px; align-items: center; padding: 14px; border: 1px solid rgba(255,255,255,.2); border-radius: 14px; color: rgba(233,242,255,.72); background: rgba(3,17,57,.34); text-align: left; cursor: pointer; }
+    .prototype-tab span { color: #9fc3ff; font-family: var(--serif); font-size: 1.25rem; }
+    .prototype-tab strong { display: block; color: inherit; font-size: .83rem; }
+    .prototype-tab small { display: block; margin-top: 2px; color: inherit; opacity: .72; font-size: .7rem; }
+    .prototype-tab:hover, .prototype-tab[aria-selected="true"] { color: #fff; border-color: rgba(255,255,255,.58); background: rgba(255,255,255,.14); box-shadow: inset 3px 0 #79eeff; }
+    .prototype-focus { min-width: 0; min-height: 490px; padding: 24px; border: 1px solid rgba(255,255,255,.25); border-radius: 22px; background: rgba(2,14,48,.34); backdrop-filter: blur(14px); }
+    .prototype-panel { min-height: 440px; display: grid; grid-template-columns: minmax(250px, 340px) minmax(190px, 1fr); gap: 28px; align-items: center; animation: prototype-in .32s ease both; }
+    .prototype-panel[hidden] { display: none; }
+    @keyframes prototype-in { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
+    .prototype-phone { width: 100%; max-width: 328px; margin-inline: auto; padding: 10px; border-radius: 32px; background: #06143a; border: 1px solid rgba(255,255,255,.45); box-shadow: 0 28px 70px rgba(0,0,0,.32); }
+    .prototype-screen { position: relative; min-height: 420px; overflow: hidden; padding: 22px 18px 18px; border-radius: 24px; color: #11224a; background: #f6f8fd; }
+    .prototype-screen::before { content: ''; position: absolute; top: 8px; left: 50%; width: 62px; height: 5px; border-radius: 99px; background: #cbd5e9; transform: translateX(-50%); }
+    .app-topline { display: flex; justify-content: space-between; align-items: center; margin: 10px 0 28px; font-size: .67rem; font-weight: 800; color: #124ae8; }
+    .app-wordmark { font-size: 1rem; letter-spacing: -.04em; }
+    .app-icon { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; background: #e7eeff; color: #174fe5; }
+    .app-card { padding: 18px; border: 1px solid #d9e1f1; border-radius: 17px; background: #fff; box-shadow: 0 10px 30px rgba(18,57,145,.08); }
+    .app-card + .app-card { margin-top: 12px; }
+    .app-status { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 16px; color: #137c5a; font-size: .67rem; font-weight: 850; letter-spacing: .05em; text-transform: uppercase; }
+    .app-status::before { content: '✓'; width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: #20a977; }
+    .app-card h4 { margin: 0; color: #10234f; font-size: 1.25rem; line-height: 1.15; letter-spacing: -.025em; }
+    .app-card p { margin: 9px 0 0; color: #66718b; font-size: .78rem; line-height: 1.5; }
+    .app-primary { width: 100%; margin-top: 18px; padding: 13px 15px; border: 0; border-radius: 11px; color: #fff; background: #1552ee; font-size: .8rem; font-weight: 800; }
+    .app-secondary { width: 100%; margin-top: 9px; padding: 11px 15px; border: 1px solid #c8d5f2; border-radius: 11px; color: #1750dc; background: #fff; font-size: .76rem; font-weight: 800; }
+    .app-caption { margin-top: 12px; color: #7a849a; text-align: center; font-size: .66rem; }
+    .app-progress { display: grid; gap: 9px; margin-top: 15px; }
+    .app-progress div { display: flex; justify-content: space-between; gap: 12px; padding-top: 9px; border-top: 1px solid #e4e9f3; color: #61708f; font-size: .7rem; }
+    .app-progress b { color: #194fcf; }
+    .amount-box { margin: 14px 0 4px; padding: 14px; border: 1px solid #bcccef; border-radius: 12px; color: #132a62; font-size: 1.3rem; font-weight: 800; }
+    .bank-row { display: flex; gap: 10px; align-items: center; margin-top: 13px; padding: 12px; border-radius: 11px; background: #eef3ff; color: #294477; font-size: .72rem; }
+    .bank-mark { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 8px; color: #fff; background: #2865f4; font-size: .68rem; font-weight: 900; }
+    .recovery-icon { width: 50px; height: 50px; display: grid; place-items: center; margin-bottom: 20px; border-radius: 15px; color: #1552ee; background: #e8efff; font-size: 1.35rem; }
+    .prototype-note { align-self: center; max-width: 330px; padding: 22px; border: 1px solid rgba(255,255,255,.28); border-radius: 17px; color: #f5f8ff; background: rgba(4,20,63,.52); box-shadow: 0 18px 60px rgba(0,0,0,.16); }
+    .prototype-note small { display: block; color: #92f0ff; font-size: .65rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+    .prototype-note h4 { margin: 8px 0 9px; font-size: 1rem; }
+    .prototype-note p { margin: 0; color: rgba(237,244,255,.76); font-size: .8rem; line-height: 1.55; }
+
     .governance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .rituals { display: grid; gap: 0; }
     .ritual { display: grid; grid-template-columns: 90px 1fr; gap: 18px; padding: 17px 0; border-bottom: 1px solid var(--line); }
@@ -222,6 +293,9 @@
       .experience { grid-template-columns: 1fr 1fr; }
       .experience-step { min-height: 250px; }
       .experience-step::before { margin-bottom: 48px; }
+      .prototype-grid { grid-template-columns: 1fr; }
+      .prototype-tabs { grid-template-columns: repeat(4, minmax(145px, 1fr)); overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+      .prototype-tabs::-webkit-scrollbar { display: none; }
     }
     @media (max-width: 620px) {
       .wrap { width: min(calc(100% - 28px), var(--max)); }
@@ -241,6 +315,15 @@
       .launch-side + .launch-side { border-left: 0; border-top: 1px solid var(--line); }
       .data-table th:nth-child(2), .data-table td:nth-child(2) { display: none; }
       .card-head { align-items: flex-start; flex-direction: column; }
+      .activation-prototype { min-height: auto; padding: 20px 14px; border-radius: 20px; }
+      .prototype-header { display: block; }
+      .concept-label { display: inline-flex; margin-top: 15px; }
+      .prototype-focus { min-height: 0; padding: 14px; }
+      .prototype-panel { min-height: 0; grid-template-columns: 1fr; gap: 16px; }
+      .prototype-phone { max-width: 310px; }
+      .prototype-screen { min-height: 400px; }
+      .prototype-note { max-width: none; }
+      .ambient-app { inset: 8% -26% 4% 18%; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -422,12 +505,39 @@
           <div class="section-index">05 · Customer experience</div>
           <div><h2>Show users what happened &amp; give them one clear next step.</h2><p class="section-intro">Proposed flow, subject to the confirmed failure mode &amp; compliance constraints.</p></div>
         </div>
-        <div class="experience reveal">
-          <article class="experience-step"><span class="tag proposal">Proposal</span><h3>Confirm the handoff</h3><p>Before users leave the partner → say what happens next, who owns it &amp; how long it takes.</p><div class="microcopy">“We’ll securely send your details to Ajaib. No need to enter them again.”</div></article>
-          <article class="experience-step"><span class="tag proposal">Proposal</span><h3>Show one shared status</h3><p>Use the same stage language across partner &amp; Ajaib. No contradictory “done” vs. “pending.”</p><div class="microcopy">“KYC approved · one step left to activate your account.”</div></article>
-          <article class="experience-step"><span class="tag proposal">Proposal</span><h3>Resume at the exact step</h3><p>Deep-link into a state-aware deposit path. Keep a safe fallback when the app is unavailable.</p><div class="microcopy">“Continue to first deposit. About 1 minute.”</div></article>
-          <article class="experience-step"><span class="tag proposal">Proposal</span><h3>Recover without blame</h3><p>Preserve progress. Explain the next action. Offer retry or support with an incident reference.</p><div class="microcopy">“Your application is safe. Try again, or we can help.”</div></article>
-        </div>
+        <article class="activation-prototype reveal" aria-labelledby="prototype-title">
+          <div class="prototype-ambient" aria-hidden="true"><div class="ambient-app"><div class="ambient-bar"></div><div class="ambient-balance"></div><div class="ambient-actions"><span></span><span></span><span></span></div><div class="ambient-list"><span></span><span></span><span></span></div></div></div>
+          <div class="prototype-header">
+            <div><span class="prototype-kicker">Illustrative proposal</span><h3 id="prototype-title">From approval to activation.</h3><p>Tap each moment. The blue layer signals the Ajaib environment; the readable foreground isolates the UX decision we are proposing.</p></div>
+            <span class="concept-label">Conceptual Ajaib environment</span>
+          </div>
+          <div class="prototype-grid">
+            <div class="prototype-tabs" role="tablist" aria-label="Proposed activation journey">
+              <button class="prototype-tab" id="prototype-tab-1" role="tab" aria-selected="true" aria-controls="prototype-panel-1" tabindex="0"><span>01</span><div><strong>Handoff</strong><small>Set expectation</small></div></button>
+              <button class="prototype-tab" id="prototype-tab-2" role="tab" aria-selected="false" aria-controls="prototype-panel-2" tabindex="-1"><span>02</span><div><strong>Account ready</strong><small>One status</small></div></button>
+              <button class="prototype-tab" id="prototype-tab-3" role="tab" aria-selected="false" aria-controls="prototype-panel-3" tabindex="-1"><span>03</span><div><strong>First deposit</strong><small>Exact landing</small></div></button>
+              <button class="prototype-tab" id="prototype-tab-4" role="tab" aria-selected="false" aria-controls="prototype-panel-4" tabindex="-1"><span>04</span><div><strong>Recovery</strong><small>Never lose progress</small></div></button>
+            </div>
+            <div class="prototype-focus">
+              <div class="prototype-panel" id="prototype-panel-1" role="tabpanel" aria-labelledby="prototype-tab-1">
+                <div class="prototype-phone" aria-hidden="true"><div class="prototype-screen"><div class="app-topline"><span class="app-wordmark">ajaib</span><span class="app-icon">↗</span></div><div class="app-card"><div class="app-status">KYC approved</div><h4>Your details are on their way.</h4><p>We received your application from Partner X. Continue in Ajaib to activate your account.</p><button class="app-primary" type="button" tabindex="-1">Continue in Ajaib</button><div class="app-caption">No need to enter your details again</div></div></div></div>
+                <aside class="prototype-note"><small>UX decision</small><h4>Confirm the handoff before the switch.</h4><p>Tell users what moves, who owns the next step &amp; what will happen when Ajaib opens.</p></aside>
+              </div>
+              <div class="prototype-panel" id="prototype-panel-2" role="tabpanel" aria-labelledby="prototype-tab-2" hidden>
+                <div class="prototype-phone" aria-hidden="true"><div class="prototype-screen"><div class="app-topline"><span class="app-wordmark">ajaib</span><span class="app-icon">✓</span></div><div class="app-card"><div class="app-status">Account ready</div><h4>You’re ready to invest.</h4><p>Your KYC is approved &amp; your investment account is active.</p><button class="app-primary" type="button" tabindex="-1">Make first deposit</button><div class="app-progress"><div><span>KYC review</span><b>Complete</b></div><div><span>Account activation</span><b>Complete</b></div></div></div></div></div>
+                <aside class="prototype-note"><small>UX decision</small><h4>One status across both companies.</h4><p>Translate backend readiness into one plain-language state. No “approved” on one surface &amp; “pending” on another.</p></aside>
+              </div>
+              <div class="prototype-panel" id="prototype-panel-3" role="tabpanel" aria-labelledby="prototype-tab-3" hidden>
+                <div class="prototype-phone" aria-hidden="true"><div class="prototype-screen"><div class="app-topline"><span class="app-wordmark">ajaib</span><span class="app-icon">＋</span></div><div class="app-card"><div class="app-status">Account active</div><h4>Make your first deposit.</h4><p>Fund your active investment account. You can review everything before confirming.</p><div class="amount-box">Rp 1,000,000</div><div class="bank-row"><span class="bank-mark">B</span><span>Transfer from your bank</span></div><button class="app-primary" type="button" tabindex="-1">Continue</button></div></div></div>
+                <aside class="prototype-note"><small>UX decision</small><h4>Land on the action, not the homepage.</h4><p>Preserve context through authentication or install. Take eligible users directly to the intended account + deposit CTA.</p></aside>
+              </div>
+              <div class="prototype-panel" id="prototype-panel-4" role="tabpanel" aria-labelledby="prototype-tab-4" hidden>
+                <div class="prototype-phone" aria-hidden="true"><div class="prototype-screen"><div class="app-topline"><span class="app-wordmark">ajaib</span><span class="app-icon">?</span></div><div class="app-card"><div class="recovery-icon">↻</div><h4>Your progress is safe.</h4><p>We couldn’t finish the handoff. Your approved KYC is saved, so you can retry without starting over.</p><button class="app-primary" type="button" tabindex="-1">Try again</button><button class="app-secondary" type="button" tabindex="-1">Get help</button><div class="app-caption">Reference · AJB-2048</div></div></div></div>
+                <aside class="prototype-note"><small>UX decision</small><h4>Recover without blame.</h4><p>Keep the approved state, explain the failure honestly &amp; provide retry + support with an incident reference.</p></aside>
+              </div>
+            </div>
+          </div>
+        </article>
 
         <article class="card reveal added"><div class="card-head"><h3>Illustrative account-ready → first-deposit experience</h3><span class="tag proposal">Target state</span></div>
           <div class="added-steps"><div><b>Partner · Ready</b><small>Clear next step + honest handoff ownership</small></div><div><b>Context-preserving link</b><small>Retain eligible state + safe auth/install fallback</small></div><div><b>Ajaib · Funding</b><small>Land on the intended account + deposit CTA, not generic home</small></div><div><b>Resume / recover</b><small>Truthful delay, retry or support + stranded-user reactivation</small></div></div>
@@ -509,6 +619,27 @@
         const branch = trigger.closest('.tree-branch');
         branch.classList.toggle('open');
         trigger.setAttribute('aria-expanded', branch.classList.contains('open'));
+      });
+    });
+
+    const prototypeTabs = [...document.querySelectorAll('.prototype-tab')];
+    const activatePrototypeStep = tab => {
+      prototypeTabs.forEach(item => {
+        const active = item === tab;
+        item.setAttribute('aria-selected', active);
+        item.tabIndex = active ? 0 : -1;
+        document.getElementById(item.getAttribute('aria-controls')).hidden = !active;
+      });
+    };
+    prototypeTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activatePrototypeStep(tab));
+      tab.addEventListener('keydown', event => {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        let next = event.key === 'Home' ? 0 : event.key === 'End' ? prototypeTabs.length - 1 : index + (event.key === 'ArrowRight' ? 1 : -1);
+        next = (next + prototypeTabs.length) % prototypeTabs.length;
+        activatePrototypeStep(prototypeTabs[next]);
+        prototypeTabs[next].focus();
       });
     });
 
