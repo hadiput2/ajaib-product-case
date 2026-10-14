@@ -271,6 +271,35 @@
     .phase h3 { margin: 8px 0 12px; font-size: 1rem; }
     .phase ul { margin: 0; padding-left: 17px; color: var(--muted); font-size: .82rem; }
     .phase li + li { margin-top: 8px; }
+    .phase-gate { margin-top: 16px; padding-top: 13px; border-top: 1px solid var(--line); color: #cfe0d9; font-size: .72rem; line-height: 1.45; }
+    .phase-gate b { display: block; margin-bottom: 3px; color: var(--green); font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; }
+    .workstream-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
+    .workstream { padding: 19px; border: 1px solid var(--line); border-radius: 15px; background: rgba(8,20,16,.54); }
+    .workstream small { display: block; color: var(--green); font-size: .66rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+    .workstream strong { display: block; margin-top: 9px; font-size: .94rem; line-height: 1.35; }
+    .workstream span { display: block; margin-top: 7px; color: var(--muted); font-size: .78rem; line-height: 1.55; }
+    .workstream.conditional { border-color: rgba(244,189,103,.3); background: rgba(244,189,103,.055); }
+    .workstream.conditional small { color: var(--amber); }
+    .scope-contract { display: grid; grid-template-columns: .72fr 1.28fr; gap: 24px; align-items: stretch; }
+    .scope-statement { padding: 24px; border: 1px solid rgba(78,231,168,.3); border-radius: 18px; background: linear-gradient(145deg, rgba(78,231,168,.1), rgba(9,22,17,.56)); }
+    .scope-statement small { color: var(--green); font-size: .66rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+    .scope-statement strong { display: block; margin-top: 12px; font-family: var(--serif); font-size: clamp(1.55rem, 3vw, 2.35rem); font-weight: 500; line-height: 1.08; }
+    .scope-statement p { margin: 12px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.55; }
+    .scope-sides { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .scope-side { padding: 20px; border: 1px solid var(--line); border-radius: 15px; }
+    .scope-side h4 { margin: 0 0 12px; color: #dfe9e5; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+    .scope-side ul { margin: 0; padding-left: 17px; color: var(--muted); font-size: .78rem; line-height: 1.5; }
+    .scope-side li + li { margin-top: 8px; }
+    .scope-side.out { background: rgba(244,189,103,.045); }
+    .decision-gates { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; counter-reset: gate; }
+    .execution-gate { position: relative; padding: 21px; border: 1px solid var(--line); border-radius: 16px; background: rgba(8,20,16,.58); counter-increment: gate; }
+    .execution-gate::before { content: '0' counter(gate); display: block; margin-bottom: 20px; color: var(--green); font-family: var(--serif); font-size: 1.75rem; }
+    .execution-gate small { display: block; color: var(--green); font-size: .65rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .execution-gate strong { display: block; margin-top: 7px; font-size: .95rem; line-height: 1.35; }
+    .execution-gate p { margin: 7px 0 0; color: var(--muted); font-size: .78rem; line-height: 1.5; }
+    .gate-owner { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); color: #cdd9d4; font-size: .7rem; line-height: 1.45; }
+    .rollout-rule { margin-top: 12px; padding: 18px 20px; border-left: 3px solid var(--amber); border-radius: 0 14px 14px 0; background: rgba(244,189,103,.075); color: #dce5e1; font-size: .82rem; line-height: 1.6; }
+    .rollout-rule strong { color: #fff; }
 
     .experience { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; counter-reset: step; }
     .experience-step { min-height: 300px; padding: 24px; border-radius: 16px; border: 1px solid var(--line); background: linear-gradient(155deg, rgba(20,35,30,.9), rgba(10,20,16,.62)); counter-increment: step; }
@@ -279,17 +308,33 @@
     .experience-step p { color: var(--muted); font-size: .84rem; margin: 10px 0 0; }
     .microcopy { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 14px; color: #cdd8d4; font-size: .78rem; font-style: italic; }
 
+    .intervention-paths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
+    .intervention-path { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: rgba(8, 20, 16, .56); }
+    .intervention-path small { display: block; color: var(--green); font-size: .67rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+    .intervention-path strong { display: block; margin-top: 10px; font-size: .95rem; line-height: 1.35; }
+    .intervention-path span { display: block; margin-top: 7px; color: var(--muted); font-size: .79rem; line-height: 1.55; }
+    .prototype-disclosure { overflow: hidden; margin-top: 20px; border: 1px solid var(--line); border-radius: 22px; background: rgba(10, 22, 18, .62); }
+    .prototype-disclosure summary { min-height: 118px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 28px; cursor: pointer; list-style: none; }
+    .prototype-disclosure summary::-webkit-details-marker { display: none; }
+    .prototype-summary-copy { display: grid; gap: 5px; }
+    .prototype-summary-copy small { color: var(--green); font-size: .67rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+    .prototype-summary-copy strong { font-family: var(--serif); font-size: clamp(1.45rem, 3vw, 2.2rem); line-height: 1.08; font-weight: 500; }
+    .prototype-summary-copy span { max-width: 690px; color: var(--muted); font-size: .82rem; line-height: 1.5; }
+    .prototype-summary-action { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; color: #dce8e3; font-size: .72rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+    .prototype-summary-action::after { content: '+'; width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--green); font-size: 1.2rem; transition: transform .2s ease; }
+    .prototype-disclosure[open] .prototype-summary-action::after { transform: rotate(45deg); }
+    .prototype-disclosure[open] summary { border-bottom: 1px solid rgba(112, 166, 255, .22); }
     .activation-prototype {
       position: relative;
       isolation: isolate;
       overflow: hidden;
-      min-height: 650px;
-      margin-bottom: 20px;
+      min-height: 0;
+      margin: 0;
       padding: 30px;
-      border: 1px solid rgba(112, 166, 255, .36);
-      border-radius: 28px;
-      background: linear-gradient(145deg, #07247f 0%, #0b4df5 52%, #0a35bd 100%);
-      box-shadow: 0 30px 100px rgba(0, 33, 135, .28);
+      border: 0;
+      border-radius: 0;
+      background: linear-gradient(145deg, #071a4f 0%, #0b328f 56%, #09266f 100%);
+      box-shadow: none;
     }
     .activation-prototype::after {
       content: '';
@@ -299,7 +344,7 @@
       background: linear-gradient(90deg, rgba(2, 12, 44, .78), rgba(3, 22, 74, .18) 48%, rgba(2, 11, 38, .25));
       pointer-events: none;
     }
-    .prototype-ambient { position: absolute; inset: -12%; z-index: -2; opacity: .42; filter: blur(11px); transform: scale(1.08) rotate(-2deg); pointer-events: none; }
+    .prototype-ambient { display: none; }
     .ambient-app { position: absolute; inset: 4% 7% 3% 29%; padding: 56px; border: 1px solid rgba(255,255,255,.34); border-radius: 44px; background: linear-gradient(160deg, rgba(68,143,255,.96), rgba(0,54,209,.92)); box-shadow: 0 35px 90px rgba(0,0,0,.3); }
     .ambient-bar { width: 44%; height: 18px; border-radius: 99px; background: rgba(255,255,255,.58); }
     .ambient-balance { width: 62%; height: 98px; margin-top: 55px; border-radius: 18px; background: rgba(255,255,255,.48); }
@@ -312,6 +357,15 @@
     .prototype-header h3 { margin-top: 6px; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1; font-weight: 500; letter-spacing: -.04em; }
     .prototype-header p { max-width: 430px; margin: 7px 0 0; color: rgba(236,244,255,.8); font-size: .86rem; }
     .concept-label { flex: 0 0 auto; padding: 7px 10px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; background: rgba(3,21,67,.35); color: #e7f0ff; font-size: .66rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .prototype-situation { position: relative; z-index: 1; margin-bottom: 24px; padding: 20px; border: 1px solid rgba(255,255,255,.22); border-radius: 18px; background: rgba(2,14,48,.34); }
+    .prototype-situation > small { display: block; margin-bottom: 14px; color: #92f0ff; font-size: .65rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+    .situation-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .situation-step { position: relative; padding: 15px; border-radius: 13px; background: rgba(255,255,255,.08); }
+    .situation-step small { display: block; color: #b9d2ff; font-size: .62rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .situation-step strong { display: block; margin-top: 7px; color: #fff; font-size: .85rem; line-height: 1.35; }
+    .situation-step span { display: block; margin-top: 5px; color: rgba(237,244,255,.72); font-size: .75rem; line-height: 1.5; }
+    .prototype-evidence-gate { margin-top: 12px; padding: 12px 14px; border-left: 3px solid #79eeff; border-radius: 0 10px 10px 0; color: rgba(237,244,255,.78); background: rgba(3,17,57,.38); font-size: .76rem; line-height: 1.55; }
+    .prototype-evidence-gate strong { color: #fff; }
     .prototype-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 24px; align-items: stretch; }
     .prototype-tabs { display: grid; align-content: start; gap: 9px; }
     .prototype-tab { width: 100%; display: grid; grid-template-columns: 30px 1fr; gap: 11px; align-items: center; padding: 14px; border: 1px solid rgba(255,255,255,.2); border-radius: 14px; color: rgba(233,242,255,.72); background: rgba(3,17,57,.34); text-align: left; cursor: pointer; }
@@ -326,6 +380,7 @@
     .prototype-phone { width: 100%; max-width: 328px; margin-inline: auto; padding: 10px; border-radius: 32px; background: #06143a; border: 1px solid rgba(255,255,255,.45); box-shadow: 0 28px 70px rgba(0,0,0,.32); }
     .prototype-screen { position: relative; min-height: 420px; overflow: hidden; padding: 22px 18px 18px; border-radius: 24px; color: #11224a; background: #f6f8fd; }
     .prototype-screen::before { content: ''; position: absolute; top: 8px; left: 50%; width: 62px; height: 5px; border-radius: 99px; background: #cbd5e9; transform: translateX(-50%); }
+    .concept-screen-note { margin: 8px 0 14px; color: #7d89a4; font-size: .58rem; font-weight: 850; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
     .app-topline { display: flex; justify-content: space-between; align-items: center; margin: 10px 0 28px; font-size: .67rem; font-weight: 800; color: #124ae8; }
     .app-wordmark { font-size: 1rem; letter-spacing: -.04em; }
     .app-icon { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 50%; background: #e7eeff; color: #174fe5; }
@@ -335,8 +390,8 @@
     .app-status::before { content: '✓'; width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: #20a977; }
     .app-card h4 { margin: 0; color: #10234f; font-size: 1.25rem; line-height: 1.15; letter-spacing: -.025em; }
     .app-card p { margin: 9px 0 0; color: #66718b; font-size: .78rem; line-height: 1.5; }
-    .app-primary { width: 100%; margin-top: 18px; padding: 13px 15px; border: 0; border-radius: 11px; color: #fff; background: #1552ee; font-size: .8rem; font-weight: 800; }
-    .app-secondary { width: 100%; margin-top: 9px; padding: 11px 15px; border: 1px solid #c8d5f2; border-radius: 11px; color: #1750dc; background: #fff; font-size: .76rem; font-weight: 800; }
+    .app-primary { width: 100%; margin-top: 18px; padding: 13px 15px; border: 0; border-radius: 11px; color: rgba(255,255,255,.9); background: #3868db; font-size: .8rem; font-weight: 800; text-align: center; cursor: default; }
+    .app-secondary { width: 100%; margin-top: 9px; padding: 11px 15px; border: 1px solid #c8d5f2; border-radius: 11px; color: #4566ae; background: #f8faff; font-size: .76rem; font-weight: 800; text-align: center; cursor: default; }
     .app-caption { margin-top: 12px; color: #7a849a; text-align: center; font-size: .66rem; }
     .app-progress { display: grid; gap: 9px; margin-top: 15px; }
     .app-progress div { display: flex; justify-content: space-between; gap: 12px; padding-top: 9px; border-top: 1px solid #e4e9f3; color: #61708f; font-size: .7rem; }
@@ -393,12 +448,17 @@
       .tree { grid-template-columns: 1fr; }
       .roadmap { grid-template-columns: 1fr 1fr; }
       .roadmap::before { display: none; }
+      .workstream-grid { grid-template-columns: 1fr 1fr; }
+      .scope-contract { grid-template-columns: 1fr; }
+      .decision-gates { grid-template-columns: 1fr; }
       .experience { grid-template-columns: 1fr 1fr; }
       .experience-step { min-height: 250px; }
       .experience-step::before { margin-bottom: 48px; }
       .prototype-grid { grid-template-columns: 1fr; }
       .prototype-tabs { grid-template-columns: repeat(4, minmax(145px, 1fr)); overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
       .prototype-tabs::-webkit-scrollbar { display: none; }
+      .intervention-paths { grid-template-columns: 1fr; }
+      .situation-flow { grid-template-columns: 1fr; }
     }
     @media (max-width: 620px) {
       .wrap { width: min(calc(100% - 28px), var(--max)); }
@@ -418,6 +478,8 @@
       .case-summary-action { font-size: .7rem; }
       .case-brief-content { padding: 26px 18px 18px; }
       .case-section { padding: 21px; }
+      .prototype-disclosure summary { min-height: 0; align-items: flex-start; padding: 20px; }
+      .prototype-summary-action { font-size: 0; }
       .case-section-head { display: block; }
       .case-section-head .tag { margin-bottom: 0; }
       .kyc-flow-desktop { display: none; }
@@ -428,7 +490,7 @@
       h1 { font-size: clamp(3rem, 17vw, 4.8rem); }
       .hero-card, .card, .big-insight { padding: 21px; }
       .signal-number { font-size: 5rem; }
-      .roadmap, .experience { grid-template-columns: 1fr; }
+      .roadmap, .experience, .workstream-grid, .scope-sides { grid-template-columns: 1fr; }
       .experience-step { min-height: auto; }
       .experience-step::before { margin-bottom: 34px; }
       .launch-grid { grid-template-columns: 1fr; }
@@ -621,23 +683,23 @@
             <div class="signal-label"><span>Bind → first deposit</span><span>−16 pp</span></div>
             <div class="signal-number">29<small>% latest</small></div>
             <div class="signal-bar" aria-hidden="true"><span></span></div>
-            <p class="signal-copy">The earlier cohort converted at 45%. The latest cohort converted at 29% within the same 14-day observation window.</p>
+            <p class="signal-copy">The earlier customer group reached 45%. The latest reached 29% within the same 14-day window.</p>
           </aside>
         </div>
 
         <article class="executive-brief reveal" aria-labelledby="executive-recommendation-title">
           <div class="executive-brief-head">
             <div class="section-index">Executive recommendation</div>
-            <div><h2 id="executive-recommendation-title">Investigate post-approval first. Commit the squad after 48 hours of evidence.</h2><p class="executive-brief-intro">The largest numerical decline appears between approval and first deposit, so that is where the investigation should begin. It is a provisional priority rather than a claim that the cause sits there.</p></div>
+            <div><h2 id="executive-recommendation-title">Investigate post-approval first. Commit the squad after 48 hours of evidence.</h2><p class="executive-brief-intro">The largest drop appears between approval and first deposit, so that is where the investigation should begin. This is a starting point, not proof that the cause sits there.</p></div>
           </div>
           <div class="executive-actions">
-            <div class="executive-action"><small>Act now</small><strong>Redirect one cross-functional squad immediately.</strong><p>Use the first 48 hours to reconcile the data, trace the account journey and contain any material customer or account-integrity risk.</p></div>
-            <div class="executive-action"><small>48-hour output</small><strong>Choose the most recoverable, evidence-backed intervention.</strong><p>Commit to restoration, partner remediation, process improvement or a focused experiment based on cause, control, time, value and risk.</p></div>
+            <div class="executive-action"><small>Act now</small><strong>Redirect one cross-functional squad immediately.</strong><p>Use the first 48 hours to check that both sides’ numbers match, trace the account journey and limit any serious customer or account risk.</p></div>
+            <div class="executive-action"><small>48-hour output</small><strong>Choose the response most likely to recover customers.</strong><p>Based on the evidence, restore the working flow, ask the partner to fix its part, remove a process delay or run one focused test.</p></div>
           </div>
           <div class="executive-path" aria-label="Decision path after the first 48 hours">
-            <div class="decision-step"><small>Default decision</small><b>Keep the squad on the highest-confidence failure mechanism.</b><span>Prioritize the path where meaningful recovery is achievable within the two-week window.</span></div>
-            <div class="decision-step"><small>What changes the priority</small><b>Move upstream if timing explains the apparent post-approval decline.</b><span>If equivalent-follow-up conversion is stable and approval has slowed, the main intervention should move earlier in the journey.</span></div>
-            <div class="decision-step"><small>Day 14 commitment</small><b>Show delivery and early comparable signals.</b><span>Report what was contained or shipped, what the evidence shows so far and when the mature outcome will be available.</span></div>
+            <div class="decision-step"><small>Default decision</small><b>Keep the squad on the most likely cause.</b><span>Choose the problem that can recover enough customers within the two-week window.</span></div>
+            <div class="decision-step"><small>What changes the priority</small><b>Move earlier in the journey if approval delays explain the later drop.</b><span>If customers convert at the same rate when they get the same amount of time after approval, focus the main work before approval.</span></div>
+            <div class="decision-step"><small>Day 14 commitment</small><b>Show what was delivered and what the early results say.</b><span>Report what was limited or launched, what the evidence shows so far and when the full result will be ready.</span></div>
           </div>
         </article>
 
@@ -645,10 +707,10 @@
           <div class="case-at-glance-head"><h3 id="case-glance-title">The case at a glance</h3><p>The essential context for the recommendation.</p></div>
           <div class="case-glance-grid">
             <div class="case-glance-item"><b>45% → 29%</b><span>Bound account to first deposit conversion.</span></div>
-            <div class="case-glance-item"><b>Two four-week cohorts</b><span>Compared using the same funnel definition.</span></div>
+            <div class="case-glance-item"><b>Two four-week customer groups</b><span>Compared using the same funnel definition.</span></div>
             <div class="case-glance-item"><b>14-day observation window</b><span>Measured from the start of registration.</span></div>
             <div class="case-glance-item"><b>Two account-opening models</b><span>The partner or Ajaib completes account opening.</span></div>
-            <div class="case-glance-item"><b>One squad available now</b><span>Any additional squad requires a roadmap trade-off.</span></div>
+            <div class="case-glance-item"><b>One squad available now</b><span>Adding another squad means delaying other planned work.</span></div>
             <div class="case-glance-item"><b>Two-week response</b><span>Improve the outcome without additional headcount.</span></div>
           </div>
         </aside>
@@ -713,12 +775,12 @@
           </article>
 
           <article class="case-section reveal" aria-labelledby="case-data-title">
-            <div class="case-section-head"><div><span class="tag fact">Starting data</span><h3 id="case-data-title">The drop appears across the funnel.</h3></div><p>These are two consecutive four-week signup cohorts. Each customer is observed for 14 days after starting registration.</p></div>
-            <div class="cohort-legend" aria-hidden="true"><span class="cohort-key">Earlier cohort</span><span class="cohort-key latest">Latest cohort</span></div>
+            <div class="case-section-head"><div><span class="tag fact">Starting data</span><h3 id="case-data-title">The drop appears across the funnel.</h3></div><p>These are two back-to-back four-week signup groups. Each customer is followed for 14 days after starting registration.</p></div>
+            <div class="cohort-legend" aria-hidden="true"><span class="cohort-key">Earlier group</span><span class="cohort-key latest">Latest group</span></div>
             <div class="case-chart-wrap">
               <svg class="case-chart" viewBox="0 0 920 330" role="img" aria-labelledby="cohort-chart-title cohort-chart-desc">
-                <title id="cohort-chart-title">Earlier and latest cohort progression through four account-opening stages</title>
-                <desc id="cohort-chart-desc">Both cohorts start with 100,000 bound accounts. The earlier cohort progresses to 80,000 KYC submissions, 65,000 approvals and 45,000 first deposits. The latest progresses to 71,000 submissions, 56,200 approvals and 29,000 first deposits.</desc>
+                <title id="cohort-chart-title">Earlier and latest customer groups across four account-opening stages</title>
+                <desc id="cohort-chart-desc">Both groups start with 100,000 bound accounts. The earlier group progresses to 80,000 KYC submissions, 65,000 approvals and 45,000 first deposits. The latest progresses to 71,000 submissions, 56,200 approvals and 29,000 first deposits.</desc>
                 <text class="axis-title" x="18" y="18">Unique users</text>
                 <g><line class="grid-line" x1="74" y1="42" x2="885" y2="42"/><line class="grid-line" x1="74" y1="97" x2="885" y2="97"/><line class="grid-line" x1="74" y1="152" x2="885" y2="152"/><line class="grid-line" x1="74" y1="207" x2="885" y2="207"/><line class="grid-line" x1="74" y1="262" x2="885" y2="262"/><text x="18" y="47">100k</text><text x="27" y="102">75k</text><text x="27" y="157">50k</text><text x="27" y="212">25k</text><text x="52" y="267">0</text></g>
                 <polyline class="earlier-line" points="110,42 350,86 590,119 830,163"/><polyline class="latest-line" points="110,42 350,106 590,138 830,198"/>
@@ -727,7 +789,7 @@
                 <text class="earlier-label" x="110" y="66" text-anchor="middle">100,000</text><text class="earlier-label" x="350" y="75" text-anchor="middle">80,000</text><text class="latest-label" x="350" y="126" text-anchor="middle">71,000</text><text class="earlier-label" x="590" y="108" text-anchor="middle">65,000</text><text class="latest-label" x="590" y="158" text-anchor="middle">56,200</text><text class="earlier-label" x="830" y="152" text-anchor="middle">45,000</text><text class="latest-label" x="830" y="218" text-anchor="middle">29,000</text>
               </svg>
             </div>
-            <table class="case-data-table"><thead><tr><th>Furthest stage reached within 14 days</th><th>Earlier cohort</th><th>Latest cohort</th></tr></thead><tbody><tr><td>Accounts successfully bound</td><td>100,000</td><td>100,000</td></tr><tr><td>KYC submitted</td><td>80,000</td><td>71,000</td></tr><tr><td>KYC approved</td><td>65,000</td><td>56,200</td></tr><tr><td>First deposit</td><td>45,000</td><td>29,000</td></tr></tbody></table>
+            <table class="case-data-table"><thead><tr><th>Furthest stage reached within 14 days</th><th>Earlier group</th><th>Latest group</th></tr></thead><tbody><tr><td>Accounts successfully bound</td><td>100,000</td><td>100,000</td></tr><tr><td>KYC submitted</td><td>80,000</td><td>71,000</td></tr><tr><td>KYC approved</td><td>65,000</td><td>56,200</td></tr><tr><td>First deposit</td><td>45,000</td><td>29,000</td></tr></tbody></table>
             <p class="case-method">Each row counts unique customers who reached that stage, including customers who subsequently progressed further. Repeated attempts do not create additional users.</p>
           </article>
 
@@ -750,11 +812,11 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="section-index">01 · Evidence</div>
-          <div><h2>Start with where we lost deposits.</h2><p class="section-intro">This comparison uses two consecutive four-week cohorts with the same 14-day window. Each customer is counted once at the furthest stage they reached, so retries don’t overstate the funnel.</p></div>
+          <div><h2>The largest numerical decline appears after approval.</h2><p class="section-intro">This comparison uses two back-to-back four-week customer groups with the same 14-day window. Each customer is counted once at the furthest stage they reached, so retries do not inflate the numbers.</p></div>
         </div>
         <div class="evidence-grid">
           <article class="card reveal">
-            <div class="card-head"><h3>Funnel volume</h3><div class="toggle" role="group" aria-label="Choose cohort"><button class="active" data-cohort="latest" aria-pressed="true">Latest</button><button data-cohort="earlier" aria-pressed="false">Earlier</button></div></div>
+            <div class="card-head"><h3>Funnel volume</h3><div class="toggle" role="group" aria-label="Choose customer group"><button class="active" data-cohort="latest" aria-pressed="true">Latest</button><button data-cohort="earlier" aria-pressed="false">Earlier</button></div></div>
             <div class="funnel" aria-live="polite">
               <div class="funnel-row" style="--w:100%"><div class="funnel-line"><span class="funnel-stage">Accounts bound</span><span class="funnel-value" data-stage="bind">100,000</span></div><div class="funnel-sub" data-conv="bind">100% of bound</div></div>
               <div class="funnel-row" style="--w:82%"><div class="funnel-line"><span class="funnel-stage">KYC submitted</span><span class="funnel-value" data-stage="submit">71,000</span></div><div class="funnel-sub" data-conv="submit">71.0% stage conversion</div></div>
@@ -763,21 +825,21 @@
             </div>
           </article>
           <article class="card reveal">
-            <div class="card-head"><h3>Conditional conversion change</h3><span class="tag fact">Case fact</span></div>
+            <div class="card-head"><h3>Conversion at each step</h3><span class="tag fact">Case fact</span></div>
             <div class="delta-list">
               <div class="delta"><div class="delta-top"><span class="delta-name">Bind → KYC submit</span><span class="delta-value bad">−9.0 pp</span></div><div class="delta-detail">80.0% → 71.0% · latest drop-off 29,000</div></div>
               <div class="delta"><div class="delta-top"><span class="delta-name">KYC submit → approved</span><span class="delta-value bad">−2.1 pp</span></div><div class="delta-detail">81.3% → 79.2% · latest drop-off 14,800</div></div>
               <div class="delta"><div class="delta-top"><span class="delta-name">Approved → first deposit</span><span class="delta-value bad">−17.6 pp</span></div><div class="delta-detail">69.2% → 51.6% · latest drop-off 27,200</div></div>
             </div>
-            <div class="callout"><strong>The largest decline is not automatically the first thing we fix.</strong> Post-approval performance deteriorated most, but the squad should focus where the cause is clear, the outcome is within our control and meaningful recovery is achievable within the available time and risk constraints.</div>
+            <div class="callout"><strong>The largest decline is not automatically the first thing we fix.</strong> The biggest drop is after approval, but the squad should focus where the cause is clear, the outcome is within our control and we can help enough customers within the available time and safety limits.</div>
           </article>
         </div>
 
-        <article class="card reveal added"><div class="card-head"><h3>Recovery opportunity · calculated scenario</h3><span class="tag proposal">Counterfactual</span></div>
-          <p class="added-note"><strong>This scenario shows why post-approval deserves attention first.</strong> If we restore one stage to its earlier conversion rate while holding everything else constant, post-approval offers the larger theoretical upside. This is a counterfactual comparison, not proof of causation, a forecast or a delivery commitment.</p>
+        <article class="card reveal added"><div class="card-head"><h3>Possible recovery · calculated example</h3><span class="tag proposal">What-if calculation</span></div>
+          <p class="added-note"><strong>This scenario shows why post-approval deserves attention first.</strong> If one stage returns to its earlier conversion rate while everything else stays the same, improving post-approval produces the larger possible gain on paper. This does not prove the cause, predict the result or promise delivery.</p>
           <div class="added-grid"><div class="added-tile"><small>Restore KYC submission, 71% → 80%</small><strong>32,676</strong><span>first deposits · <b>+3,676</b> from 29,000</span><em>100,000 × 80% × 79.15% × 51.60%</em></div>
           <div class="added-tile preferred"><small>Restore approved → deposit, 51.60% → 69.23%</small><strong>38,908</strong><span>first deposits · <b>+9,908</b> from 29,000</span><em>56,200 × (45,000 ÷ 65,000)</em></div></div>
-          <p class="added-callout"><strong>Based on the numbers, my recommendation is to investigate post-approval first.</strong> The theoretical upside is about 2.7× larger. In parallel, we still need to run the upstream KYC analysis and only commit the squad once the realistically recoverable opportunity is clear.</p>
+          <p class="added-callout"><strong>Based on the numbers, my recommendation is to investigate post-approval first.</strong> The possible gain on paper is about 2.7× larger. At the same time, we still need to check the earlier KYC steps and understand how many customers we can realistically recover before committing the squad.</p>
         </article>
       </div>
     </section>
@@ -786,71 +848,71 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="section-index">02 · Diagnosis</div>
-          <div><h2>Conversion tells us how many. Latency tells us how long.</h2><p class="section-intro">The funnel shows where performance changed, but it doesn’t yet explain why. Before committing the squad to a fix, we need to test timing, processing delays and customer mix, so we can separate a genuine journey failure from a measurement or audience-mix effect.</p></div>
+          <div><h2>We need to separate real drop-off from customers simply having less time.</h2><p class="section-intro">The funnel shows where performance changed, but not why. Before committing the squad, we need to check timing, processing delays and customer mix. This tells us whether the journey is truly broken or the result only looks worse because the customers or timing changed.</p></div>
         </div>
         <div class="insight-grid">
-          <article class="card big-insight reveal"><span class="tag fact">Observed signal</span><blockquote>Approval-to-deposit deteriorated most.</blockquote><p class="caveat">The decline is 17.6 percentage points, compared with 9.0 points at KYC submission and 2.1 points at approval. That makes post-approval the first place to investigate, but it does not prove that the underlying problem starts there.</p></article>
+          <article class="card big-insight reveal"><span class="tag fact">What the data shows</span><blockquote>The largest drop is between approval and first deposit.</blockquote><p class="caveat">The decline is 17.6 percentage points, compared with 9.0 points at KYC submission and 2.1 points at approval. That makes the step after approval the first place to investigate, but it does not prove that the problem starts there.</p></article>
           <div class="decision-stack reveal">
-            <div class="decision-item"><span class="tag fact">Case clock</span><h3>The 14-day clock starts at registration.</h3><p>When approval happens later, customers have fewer observed days left to make a deposit. This means conditional conversion can fall even when post-approval behavior has not changed.</p></div>
-            <div class="decision-item"><span class="tag hypothesis">Competing explanation</span><h3>Did the customer mix change?</h3><p>We should compare partners, campaigns, acquisition promises and customer intent. A larger share of lower-intent customers could change the funnel even if the product is working as designed.</p></div>
-            <div class="decision-item"><span class="tag proposal">Decision principle</span><h3>Follow the evidence upstream when timing explains the loss.</h3><p>If approval has slowed but conversion remains stable when customers are compared at the same point after approval, the investigation should move upstream before we assign the squad.</p></div>
+            <div class="decision-item"><span class="tag fact">Case clock</span><h3>The 14-day clock starts at registration.</h3><p>When approval happens later, customers have fewer days left to make a deposit. The approval-to-deposit rate can therefore fall even when customer behavior after approval has not changed.</p></div>
+            <div class="decision-item"><span class="tag hypothesis">Another explanation</span><h3>Did the customer mix change?</h3><p>We should compare partners, campaigns, what customers were told when they signed up and how ready they were to invest. More low-intent customers could weaken the funnel even if the product is working as designed.</p></div>
+            <div class="decision-item"><span class="tag proposal">Decision principle</span><h3>Move to an earlier step if timing explains the drop.</h3><p>If approval has slowed but conversion stays stable when customers get the same amount of time after approval, the investigation should move earlier in the journey before we assign the squad.</p></div>
           </div>
         </div>
 
         <article class="latency-trap reveal">
-          <div class="latency-head"><div><span class="tag hypothesis">Hypothetical illustration</span><h3>The 14-day measurement trap.</h3></div><p>The registration window is the same for both cohorts, but customers approved later have much less time left to make a deposit.</p></div>
+          <div class="latency-head"><div><span class="tag hypothesis">Example</span><h3>The 14-day measurement variety.</h3></div><p>The registration window is the same for both groups, but customers approved later have much less time left to make a deposit.</p></div>
           <div class="latency-examples">
-            <div class="latency-example"><small>Earlier cohort example</small><strong>Approved Day 2 → ~12 days left to deposit</strong><div class="time-track" aria-hidden="true"><span class="time-dot start"></span><span class="time-dot early"></span><span class="time-dot end"></span></div><div class="time-caption"><span>D0 register</span><span>D2 approve</span><span>D14</span></div></div>
-            <div class="latency-example"><small>Latest cohort example</small><strong>Approved Day 12 → ~2 days left to deposit</strong><div class="time-track" aria-hidden="true"><span class="time-dot start"></span><span class="time-dot late"></span><span class="time-dot end"></span></div><div class="time-caption"><span>D0 register</span><span>D12 approve</span><span>D14</span></div></div>
+            <div class="latency-example"><small>Earlier group example</small><strong>Approved Day 2 → ~12 days left to deposit</strong><div class="time-track" aria-hidden="true"><span class="time-dot start"></span><span class="time-dot early"></span><span class="time-dot end"></span></div><div class="time-caption"><span>D0 register</span><span>D2 approve</span><span>D14</span></div></div>
+            <div class="latency-example"><small>Latest group example</small><strong>Approved Day 12 → ~2 days left to deposit</strong><div class="time-track" aria-hidden="true"><span class="time-dot start"></span><span class="time-dot late"></span><span class="time-dot end"></span></div><div class="time-caption"><span>D0 register</span><span>D12 approve</span><span>D14</span></div></div>
           </div>
-          <div class="latency-metrics"><div><b>Bind → submit</b><small>Elapsed time + exits</small></div><div><b>Submit → approval</b><small>p50 / p90 latency</small></div><div><b>Approval → ready</b><small>Account-state delay</small></div><div><b>Ready → deposit</b><small>Time to funding</small></div><div><b>Aligned conversion</b><small>Compare customers at the same point after approval, while accounting for incomplete follow-up.</small></div></div>
-          <p class="latency-principle"><strong>Why this matters commercially:</strong> conversion tells us how many customers made it through, while latency tells us how long the journey took. Even if customers eventually convert at the same rate, a slower path to their first investment still creates a worse experience and delays value.</p>
+          <div class="latency-metrics"><div><b>Bind → submit</b><small>Time taken + exits</small></div><div><b>Submit → approval</b><small>Typical and slow-case time</small></div><div><b>Approval → ready</b><small>Delay before account is ready</small></div><div><b>Ready → deposit</b><small>Time to first deposit</small></div><div><b>Fair conversion comparison</b><small>Compare customers after the same amount of time, including those who are still in progress.</small></div></div>
+          <p class="latency-principle"><strong>Why this matters to the business:</strong> conversion tells us how many customers made it through; time tells us how long it took. Even if customers eventually convert at the same rate, a slower path to their first investment still creates a worse experience and delays value.</p>
         </article>
 
-        <div class="tree reveal" style="margin-top:20px" aria-label="Diagnostic hypothesis tree">
-          <article class="tree-branch"><div class="tree-heading"><strong>Measurement and cohort integrity</strong><small>Establish the baseline before interpreting the journey.</small></div><div class="tree-body"><ul><li>Event completeness and identity joins<span class="test">Compare partner logs with Ajaib’s source events.</span></li><li>Registration clock and late events<span class="test">Use immutable timestamps and flag cohorts that have not matured.</span></li><li>Comparable mix and observation time<span class="test">Compare partner, campaign, operating model and customer age.</span></li></ul></div></article>
-          <article class="tree-branch"><div class="tree-heading"><strong>Pre-approval</strong><small>From account binding through KYC submission and approval.</small></div><div class="tree-body"><ul><li>Partner experience or validation regression<span class="test">Review step exits, errors and recent releases.</span></li><li>Eligibility, policy or processing delay<span class="test">Review rules, rejection reasons and p50/p90 latency.</span></li><li>Customer intent or acquisition promise<span class="test">Normalize behavior by campaign and validate the pattern through research.</span></li></ul></div></article>
-          <article class="tree-branch"><div class="tree-heading"><strong>Post-approval</strong><small>From approval through account readiness and customer reach.</small></div><div class="tree-body"><ul><li>Account-readiness delay<span class="test">Trace account opening, SID and RDN states where applicable.</span></li><li>Status delivery failure<span class="test">Compare send, delivery and open events with the underlying account-state timing.</span></li><li>Handoff expectation mismatch<span class="test">Review support tickets, customer research and the promise made by the partner.</span></li></ul></div></article>
-          <article class="tree-branch"><div class="tree-heading"><strong>Funding and activation</strong><small>From reaching the journey through deposit initiation and success.</small></div><div class="tree-body"><ul><li>Wrong landing or lost authentication<span class="test">Test deep links and confirm that the customer reaches the correct account.</span></li><li>Deposit rail or transaction failure<span class="test">Trace attempts, error codes and settlement outcomes.</span></li><li>Instruction, trust or value friction<span class="test">Review exits and support contacts, then test clearer messaging with a control group.</span></li></ul></div></article>
+        <div class="tree reveal" style="margin-top:20px" aria-label="Possible causes to investigate">
+          <article class="tree-branch"><div class="tree-heading"><strong>Check the numbers first</strong><small>Make sure the comparison is fair before judging the journey.</small></div><div class="tree-body"><ul><li>Missing events or customers counted twice<span class="test">Compare partner logs with Ajaib’s original event records.</span></li><li>Registration clock and late events<span class="test">Use timestamps that cannot change and flag groups that have not completed the full time window.</span></li><li>Customer mix and time available<span class="test">Compare partner, campaign, operating model and time since registration.</span></li></ul></div></article>
+          <article class="tree-branch"><div class="tree-heading"><strong>Pre-approval</strong><small>From account binding through KYC submission and approval.</small></div><div class="tree-body"><ul><li>Partner experience or validation problem<span class="test">Review where customers leave, error messages and recent releases.</span></li><li>Eligibility, policy or processing delay<span class="test">Review rules, rejection reasons and typical versus slow processing times.</span></li><li>Customer intent or signup promise<span class="test">Compare similar customers within each campaign and confirm the pattern through research.</span></li></ul></div></article>
+          <article class="tree-branch"><div class="tree-heading"><strong>After approval</strong><small>From approval until the account is ready and the customer is informed.</small></div><div class="tree-body"><ul><li>Account takes too long to become ready<span class="test">Trace account opening, SID and RDN status where they apply.</span></li><li>Status message fails to arrive<span class="test">Compare sent, delivered and opened messages with when the account became ready.</span></li><li>The journey differs from what customers expected<span class="test">Review support tickets, customer research and the promise made by the partner.</span></li></ul></div></article>
+          <article class="tree-branch"><div class="tree-heading"><strong>First deposit</strong><small>From entering the funding journey to a successful deposit.</small></div><div class="tree-body"><ul><li>Wrong landing page or lost login<span class="test">Test links and confirm that the customer reaches the correct account.</span></li><li>Deposit or transaction failure<span class="test">Trace attempts, error codes and final outcomes.</span></li><li>Unclear instructions or lack of trust<span class="test">Review exits and support contacts, then test clearer messaging with a comparison group.</span></li></ul></div></article>
         </div>
 
         <article class="card reveal added" aria-labelledby="decision-contract-title">
           <div class="card-head"><h3 id="decision-contract-title">The decision we will make at the 48-hour checkpoint</h3><span class="tag proposal">Decision contract</span></div>
-          <p class="decision-contract-intro">We begin with a broad set of hypotheses, but the investigation must end in a clear decision. At the 48-hour checkpoint, the evidence should point to one of the following paths, with a named owner and an explicit reason to change course.</p>
+          <p class="decision-contract-intro">We begin with several possible explanations, but the investigation must end in a clear decision. At the 48-hour checkpoint, the evidence should point to one of these paths, with a named owner and a clear reason to change course.</p>
           <div class="decision-contract">
             <div class="contract-row">
-              <div class="contract-cell"><span class="contract-label">Likely finding</span><b>A post-approval regression is reproduced.</b></div>
-              <div class="contract-cell"><span class="contract-label">Evidence required</span><p>The decline remains after aligning follow-up time, and a trace reproduces a failure in readiness, status delivery, handoff or funding. The affected volume is outside the journey’s normal range.</p></div>
-              <div class="contract-cell"><span class="contract-label">Decision</span><p>Keep the squad post-approval. Restore the last known working behavior where possible, or remediate through a controlled rollout.</p><span class="contract-owner"><strong>Decision:</strong> Head of Product · <strong>Evidence:</strong> Engineering and Data</span></div>
+              <div class="contract-cell"><span class="contract-label">Likely finding</span><b>We can repeat a failure after approval.</b></div>
+              <div class="contract-cell"><span class="contract-label">Evidence required</span><p>The decline remains when customers get the same amount of time, and tracing the journey shows a failure in account readiness, status delivery, handoff or funding. The number of affected customers is above the normal range.</p></div>
+              <div class="contract-cell"><span class="contract-label">Decision</span><p>Keep the squad post-approval. Return to the last working setup where possible, or release the fix to a small group first.</p><span class="contract-owner"><strong>Decision:</strong> Head of Product · <strong>Evidence:</strong> Engineering and Data</span></div>
             </div>
             <div class="contract-row">
-              <div class="contract-cell"><span class="contract-label">Likely finding</span><b>Approval timing explains the apparent downstream loss.</b></div>
-              <div class="contract-cell"><span class="contract-label">Evidence required</span><p>Approval latency has shifted from the earlier baseline, while conversion remains stable when customers receive equivalent time after approval and no downstream failure can be reproduced.</p></div>
-              <div class="contract-cell"><span class="contract-label">Decision</span><p>Move the primary intervention upstream to the processing bottleneck, while continuing to monitor the post-approval journey.</p><span class="contract-owner"><strong>Decision:</strong> Head of Product · <strong>Evidence:</strong> Data, Engineering and Operations</span></div>
+              <div class="contract-cell"><span class="contract-label">Likely finding</span><b>Slower approval explains the drop after approval.</b></div>
+              <div class="contract-cell"><span class="contract-label">Evidence required</span><p>Approval takes longer than before, but customers convert at the same rate when they get the same amount of time after approval, and no later failure can be reproduced.</p></div>
+              <div class="contract-cell"><span class="contract-label">Decision</span><p>Focus the main work on the approval delay, while continuing to watch what happens after approval.</p><span class="contract-owner"><strong>Decision:</strong> Head of Product · <strong>Evidence:</strong> Data, Engineering and Operations</span></div>
             </div>
             <div class="contract-row">
               <div class="contract-cell"><span class="contract-label">Likely finding</span><b>The decline is concentrated by partner or account-opening model.</b></div>
-              <div class="contract-cell"><span class="contract-label">Evidence required</span><p>The segmented difference persists after adjusting for cohort age, campaign and customer mix, and is consistent with the relevant traces or recent change history.</p></div>
-              <div class="contract-cell"><span class="contract-label">Decision</span><p>Open a joint remediation path. The company controlling the failure point owns the fix; Ajaib owns validation and protection of affected customers.</p><span class="contract-owner"><strong>Decision:</strong> Joint incident leads · <strong>Escalation:</strong> Both leadership teams if ownership blocks progress</span></div>
+              <div class="contract-cell"><span class="contract-label">Evidence required</span><p>The difference remains after comparing customers with the same amount of time, campaign and customer mix. The journey records or recent changes point to the same partner or model.</p></div>
+              <div class="contract-cell"><span class="contract-label">Decision</span><p>Open a joint fix with the partner. The company that controls the broken step owns the fix; Ajaib checks the recovery and protects affected customers.</p><span class="contract-owner"><strong>Decision:</strong> Joint incident leads · <strong>Escalation:</strong> Both leadership teams if ownership blocks progress</span></div>
             </div>
             <div class="contract-row">
-              <div class="contract-cell"><span class="contract-label">Likely finding</span><b>Account-state or mandatory-control risk is present.</b></div>
-              <div class="contract-cell"><span class="contract-label">Evidence required</span><p>Customers are exposed to incorrect, duplicate or inconsistent account states, or a security, regulatory or compliance control cannot be shown to be working.</p></div>
-              <div class="contract-cell"><span class="contract-label">Decision</span><p>Contain the affected exposure immediately. Recovery speed does not override account integrity or mandatory controls.</p><span class="contract-owner"><strong>Decision:</strong> Engineering and Compliance/Risk · <strong>Product:</strong> Coordinates customer and roadmap response</span></div>
+              <div class="contract-cell"><span class="contract-label">Likely finding</span><b>An account state is wrong, or a required safety or compliance check may be failing.</b></div>
+              <div class="contract-cell"><span class="contract-label">Evidence required</span><p>Customers may have incorrect, duplicate or conflicting account details, or we cannot show that a required security, regulatory or compliance check is working.</p></div>
+              <div class="contract-cell"><span class="contract-label">Decision</span><p>Pause or limit the affected journey immediately. Speed does not matter more than correct accounts and required controls.</p><span class="contract-owner"><strong>Decision:</strong> Engineering and Compliance/Risk · <strong>Product:</strong> Coordinates customer and roadmap response</span></div>
             </div>
             <div class="contract-row">
-              <div class="contract-cell"><span class="contract-label">Likely finding</span><b>No product failure is established.</b></div>
-              <div class="contract-cell"><span class="contract-label">Evidence required</span><p>The technical journey is healthy, the observed change is better explained by customer mix or intent, and no proposed build has a credible causal link to recovery.</p></div>
-              <div class="contract-cell"><span class="contract-label">Decision</span><p>Do not force a broad product build. Run a focused research or messaging experiment and reconsider whether the squad remains the best use of capacity.</p><span class="contract-owner"><strong>Decision:</strong> Head of Product · <strong>Evidence:</strong> Data, Design and the partner</span></div>
+              <div class="contract-cell"><span class="contract-label">Likely finding</span><b>We do not find a product failure.</b></div>
+              <div class="contract-cell"><span class="contract-label">Evidence required</span><p>The technical journey works, the change is better explained by customer mix or intent, and there is no clear reason to believe a product change would improve the result.</p></div>
+              <div class="contract-cell"><span class="contract-label">Decision</span><p>Do not force a broad product build. Run focused research or a messaging test and reconsider whether this squad is still the best use of the team.</p><span class="contract-owner"><strong>Decision:</strong> Head of Product · <strong>Evidence:</strong> Data, Design and the partner</span></div>
             </div>
           </div>
           <div class="threshold-basis">
-            <p><strong>How thresholds will be set:</strong> agree them before interpreting the results, using the strongest available operational baseline rather than inventing precision from the aggregate case data.</p>
+            <p><strong>How we set the pass/fail lines:</strong> agree them before looking at the results. Use normal past performance and known safety limits instead of making up precise numbers from the high-level case data.</p>
             <div class="threshold-grid">
-              <div class="threshold-item"><b>Baseline deviation</b><span>Compare the signal with prior variation, equivalent cohort age and the relevant partner or operating model.</span></div>
-              <div class="threshold-item"><b>Safety red lines</b><span>Any material identity, account-integrity or mandatory-control failure triggers containment.</span></div>
-              <div class="threshold-item"><b>Recoverable value</b><span>Estimate affected customers, realistic recovery and delivery time against the opportunity cost.</span></div>
-              <div class="threshold-item"><b>Approval rights</b><span>Product commits capacity; Engineering and Data validate the mechanism; Compliance/Risk approves mandatory controls.</span></div>
+              <div class="threshold-item"><b>Change from normal</b><span>Compare the result with normal variation, customers observed for the same amount of time and the relevant partner or account-opening model.</span></div>
+              <div class="threshold-item"><b>Safety red lines</b><span>Any serious identity, account or required-control failure means we pause or limit the affected journey.</span></div>
+              <div class="threshold-item"><b>Customers we can win back</b><span>Estimate how many customers are affected, how many can realistically recover and how long delivery will take.</span></div>
+              <div class="threshold-item"><b>Who signs off</b><span>Product commits the team; Engineering and Data confirm the cause; Compliance/Risk approves required controls.</span></div>
             </div>
           </div>
         </article>
@@ -861,35 +923,35 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="section-index">03 · Partner</div>
-          <div><h2>Ajaib and the partner need one incident view, with clear ownership of every next action.</h2><p class="section-intro">I would open one joint incident, reconcile the evidence early and escalate delays rather than allow the teams to debate ownership while customers remain affected.</p></div>
+          <div><h2>Ajaib and the partner need one view of the problem, with a clear owner for every next action.</h2><p class="section-intro">I would open one joint incident, compare both sides’ data early and escalate delays instead of letting the teams debate ownership while customers remain affected.</p></div>
         </div>
         <article class="card reveal added"><div class="card-head"><h3>Diagnose the correct partnership model</h3><span class="tag fact">Case fact</span></div>
-          <p class="added-note">The case is clear that partners collect the initial KYC after account binding and pass the data to Ajaib. The variable is who opens the account. An Ajaib-owned initial KYC collection flow would therefore be a new hypothesis, not a capability established by the prompt.</p>
+          <p class="added-note">The case says that partners collect the initial KYC after account binding and pass the data to Ajaib. What changes is who opens the account. A flow where Ajaib collects the initial KYC would be a new idea, not something the case says already exists.</p>
           <div class="added-grid"><div class="added-tile"><small>MODEL A · PARTNER OPENS</small><b>Partner collects → Ajaib processes → partner opens</b><span>Ajaib completes the additional KYC and returns the information the partner needs to open the account.</span></div><div class="added-tile"><small>MODEL B · AJAIB OPENS</small><b>Partner collects → Ajaib processes → Ajaib opens</b><span>Account readiness, failure ownership and the customer handoff may therefore differ from Model A.</span></div></div>
           <p class="added-callout">Because these two operating models can fail in different places, we should segment them first and diagnose each journey separately.</p>
         </article>
         <article class="card reveal added" aria-labelledby="incident-cadence-title">
           <div class="card-head"><h3 id="incident-cadence-title">Run the response as one joint incident</h3><span class="tag proposal">Proposed cadence</span></div>
-          <p class="added-note">The teams should coordinate continuously through a dedicated WhatsApp incident group, moving into a war-room call whenever customer exposure, conflicting evidence or a blocked decision requires it.</p>
+          <p class="added-note">The teams should coordinate continuously through a dedicated WhatsApp incident group and move to a war-room call whenever customers may be harmed, the evidence conflicts or a decision is blocked.</p>
           <div class="incident-cadence">
             <div class="cadence-step"><small>T+0 · Open</small><b>Create the joint incident group.</b><span>Name one lead from each company, align on the customer problem and request the first evidence.</span></div>
-            <div class="cadence-step"><small>Continuous</small><b>Share material findings as they happen.</b><span>Post changes in exposure, new evidence, blockers and decisions without waiting for a scheduled meeting.</span></div>
-            <div class="cadence-step urgent"><small>As needed · War room</small><b>Move to a call when the issue needs active containment.</b><span>Use a war room for customer harm, account-integrity or compliance risk, conflicting evidence or a blocked decision.</span></div>
-            <div class="cadence-step urgent"><small>T+4 working hours</small><b>Run the first formal checkpoint.</b><span>Summarize the evidence, exposure, containment and owners. Escalate non-response to the partner’s Product or Engineering leadership in the same business day.</span></div>
+            <div class="cadence-step"><small>Continuous</small><b>Share important findings as they happen.</b><span>Post changes in the number of affected customers, new evidence, blockers and decisions without waiting for a scheduled meeting.</span></div>
+            <div class="cadence-step urgent"><small>As needed · War room</small><b>Move to a call when the issue needs urgent action.</b><span>Use a war room when customers may be harmed, accounts may be wrong, a compliance risk appears, the evidence conflicts or a decision is blocked.</span></div>
+            <div class="cadence-step urgent"><small>T+4 working hours</small><b>Run the first formal checkpoint.</b><span>Share what we know, how many customers are affected, what has been done and who owns each action. Escalate non-response to the partner’s Product or Engineering leadership that same business day.</span></div>
             <div class="cadence-step urgent"><small>Next four hours</small><b>Escalate the unresolved decision.</b><span>If progress is still blocked, bring in the executive sponsor or highest relevant decision-maker rather than carrying the dependency into the next day.</span></div>
-            <div class="cadence-step"><small>T+24 → T+48</small><b>Confirm direction, then commit the response.</b><span>Align on the control point and containment by Day 1, then choose rollback, remediation, fallback, experiment or no-build action by the 48-hour checkpoint.</span></div>
+            <div class="cadence-step"><small>T+24 → T+48</small><b>Confirm direction, then commit the response.</b><span>Agree on where the problem sits and how customer impact is being limited by Day 1. By 48 hours, choose whether to return to the last working setup, fix the issue, use an existing backup path, run a test or avoid building anything.</span></div>
           </div>
 
           <div class="evidence-obligations">
-            <div class="evidence-party"><h4>Ajaib brings</h4><ul><li>Source funnel events and cohort definitions</li><li>Processing, readiness and deposit-state traces</li><li>Relevant Ajaib release history</li><li>Affected and realistically recoverable customer estimates</li><li>Available containment or fallback options</li></ul></div>
-            <div class="evidence-party"><h4>The partner brings</h4><ul><li>Binding and KYC event logs with request identifiers</li><li>Integration responses and recent release history</li><li>Account-opening states where the partner owns opening</li><li>The acquisition promise and customer-facing journey</li><li>Customer contacts, complaints and known operational incidents</li></ul></div>
+            <div class="evidence-party"><h4>Ajaib brings</h4><ul><li>Source funnel events and customer-group definitions</li><li>Processing, account-readiness and deposit-event records</li><li>Relevant Ajaib release history</li><li>Estimated affected customers and how many may recover</li><li>Ways to limit harm now or use an existing backup path</li></ul></div>
+            <div class="evidence-party"><h4>The partner brings</h4><ul><li>Binding and KYC event logs with request identifiers</li><li>Integration responses and recent release history</li><li>Account-opening states where the partner owns opening</li><li>What customers were told when they signed up and the journey they saw</li><li>Customer contacts, complaints and known operational incidents</li></ul></div>
           </div>
           <p class="incident-safeguard"><strong>Coordination channel, not a data store:</strong> WhatsApp is used for speed, ownership and escalation. Customer PII, credentials and raw logs remain in approved secure systems, with links or reference identifiers shared in the incident group.</p>
         </article>
 
-        <article class="card reveal added"><div class="card-head"><h3>Decision rights when the control point is known</h3><span class="tag proposal">Operating proposal</span></div><div class="matrix-wrap"><table class="decision-matrix"><thead><tr><th>Control point</th><th>Owner of the fix</th><th>Ajaib’s responsibility</th></tr></thead><tbody><tr><td>Ajaib-owned failure</td><td>Ajaib contains, restores or remediates the affected behavior.</td><td>Keep the partner informed and validate recovery through a controlled rollout.</td></tr><tr><td>Partner-owned failure</td><td>The partner rolls back or remediates the issue.</td><td>Validate recovery, protect affected customers and escalate if exposure cannot be contained.</td></tr><tr><td>Cross-system failure</td><td>One named joint incident lead coordinates clearly divided workstreams.</td><td>Maintain one incident decision, one customer-impact view and an agreed release sequence.</td></tr><tr><td>Ownership unresolved</td><td>The named executive sponsors resolve the control and commercial blocker.</td><td>Continue evidence collection and customer protection while the leadership decision is made.</td></tr></tbody></table></div>
-          <div class="escalation-panel"><h4>If the partner disputes, delays or cannot deploy.</h4><ul><li>Reconcile both systems against a jointly selected sample of customer journeys rather than debating aggregate dashboards.</li><li>Escalate missing evidence or non-response at the first four-hour checkpoint, then move to the executive sponsor during the next four-hour window if progress remains blocked.</li><li>If the partner cannot release in time, evaluate rollback, affected-traffic containment, an existing compliant fallback or another supported operating path.</li><li>If no safe alternative exists, make the unresolved customer exposure and commercial consequence an explicit leadership decision.</li></ul></div>
-          <p class="joint-output"><strong>Expected joint output by 48 hours:</strong> both companies agree on the evidence, control point, owner, containment status and next intervention. Any remaining disagreement is already with the named executive decision-makers.</p>
+        <article class="card reveal added"><div class="card-head"><h3>Who decides and who fixes the problem</h3><span class="tag proposal">Proposed roles</span></div><div class="matrix-wrap"><table class="decision-matrix"><thead><tr><th>Where the problem sits</th><th>Owner of the fix</th><th>Ajaib’s responsibility</th></tr></thead><tbody><tr><td>Ajaib-owned failure</td><td>Ajaib limits the harm, returns to the last working setup or fixes the issue.</td><td>Keep the partner informed and test the fix with a small group first.</td></tr><tr><td>Partner-owned failure</td><td>The partner returns to its last working setup or fixes the issue.</td><td>Check that customers recover, protect affected customers and escalate if harm cannot be limited.</td></tr><tr><td>Failure between both systems</td><td>One named joint incident lead coordinates clearly divided work.</td><td>Keep one decision log, one view of customer impact and one agreed release order.</td></tr><tr><td>Owner is still unclear</td><td>The named executive sponsors decide who controls the issue and resolve any business blocker.</td><td>Keep gathering evidence and protecting customers while leaders decide.</td></tr></tbody></table></div>
+          <div class="escalation-panel"><h4>If the partner disagrees, is slow to respond or cannot release.</h4><ul><li>Compare a shared sample of customer journeys event by event instead of arguing over high-level dashboards.</li><li>Escalate missing evidence or no response at the first four-hour checkpoint. If progress is still blocked, involve the executive sponsor in the next four-hour window.</li><li>If the partner cannot release in time, return to the last working setup, pause or reduce the affected journey, or use an existing approved path if one is available.</li><li>If no safe option exists, leaders must clearly accept or reject the remaining customer impact and business cost.</li></ul></div>
+          <p class="joint-output"><strong>Expected joint output by 48 hours:</strong> both companies agree on the evidence, where the problem sits, who owns it, how customer impact is being limited and what happens next. Any remaining disagreement is already with the named executive decision-makers.</p>
           <p class="added-note" style="margin-top:16px">The contractual obligations, communication rights, escalation arrangements and incentives still need to be confirmed because the case does not provide those terms.</p>
         </article>
       </div>
@@ -899,17 +961,49 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="section-index">04 · Two-week response</div>
-          <div><h2>Diagnose first, commit with evidence and report honestly.</h2><p class="section-intro">Over these two weeks, the goal is to recover as much of the funnel as we safely can while building enough evidence to make the next decision with confidence. The team can demonstrate progress by Day 14, but the fully mature conversion result will arrive later.</p></div>
-        </div>
-        <div class="roadmap reveal">
-          <div class="phase"><div class="phase-card"><span class="phase-time">Hours 0–48</span><h3>Validate and contain</h3><ul><li>Reconcile the counts and cohort clocks</li><li>Trace ownership and latency across the journey</li><li>Contain any material customer exposure</li><li>Estimate the recovery that is realistically achievable</li></ul></div></div>
-          <div class="phase"><div class="phase-card"><span class="phase-time">Days 3–6</span><h3>Commit and build</h3><ul><li>Select the mechanism supported by the evidence</li><li>Choose between restoration, a partner fix or an experiment</li><li>Name the release and rollback owners</li><li>Prepare the eligible stranded-customer cohort</li></ul></div></div>
-          <div class="phase"><div class="phase-card"><span class="phase-time">Days 7–10</span><h3>Deploy when ready</h3><ul><li>Pass every non-negotiable release gate</li><li>Limit the first wave of customer exposure</li><li>Monitor both success and customer harm</li><li>Recover eligible stranded customers separately</li></ul></div></div>
-          <div class="phase"><div class="phase-card"><span class="phase-time">Days 11–14</span><h3>Read and decide</h3><ul><li>Compare the available D1, D3 and D7 signals</li><li>Review latency and funding performance</li><li>Decide whether to hold, expand or roll back</li><li>Publish the date when the mature cohort will be ready</li></ul></div></div>
+          <div><h2>Use the first 48 hours to confirm the cause, then commit the squad.</h2><p class="section-intro">One squad works in parallel to find the cause, limit customer impact and choose one response that is likely to recover customers. The rest of the two weeks stays narrow: deliver or contain that response, help eligible affected customers continue and make the next decision using a fair comparison.</p></div>
         </div>
 
-        <article class="card reveal added"><div class="card-head"><h3>Commit the squad where recovery is both meaningful and achievable</h3><span class="tag proposal">Decision logic</span></div><div class="added-grid"><div class="added-tile"><small>CAUSAL CONFIDENCE</small><b>Do we understand what is driving the decline?</b><span>Look for a reproduced defect, time-aligned evidence or a customer hypothesis that can be tested quickly.</span></div><div class="added-tile"><small>CONTROLLABILITY</small><b>Can this squad materially change the outcome?</b><span>Consider Ajaib’s ownership, partner dependencies, operational constraints, regulation and rollout rights.</span></div><div class="added-tile"><small>TIME + OPPORTUNITY COST</small><b>How quickly can we recover value, and what would we delay?</b><span>Compare the timing and scale of the expected recovery with the value of the commitment we would move.</span></div><div class="added-tile"><small>RISK</small><b>Can we limit exposure if the change does not work?</b><span>Assess customer harm, compliance, data integrity, reversibility and the quality of our monitoring.</span></div></div></article>
-        <article class="card reveal added"><div class="card-head"><h3>When does the 14-day outcome mature?</h3><span class="tag hypothesis">Illustrative timing</span></div><div class="day14-line"><div><b>Day 0</b><span>The investigation begins</span></div><div><b>Day 7</b><span>The first customers see a hypothetical fix</span></div><div><b>Day 14</b><span>The team reviews the available D1, D3 and D7 signals and reports on delivery</span></div><div><b>Day 21</b><span>The first exposed customers complete the full 14-day registration window</span></div></div><p class="added-callout"><strong>By Day 14, I would not claim that conversion has fully recovered.</strong> The readout should show what has improved, where uncertainty remains and when the first mature result will be available.</p></article>
+        <article class="card reveal added" aria-labelledby="workstreams-title">
+          <div class="card-head"><h3 id="workstreams-title">One squad, five teams working at the same time</h3><span class="tag proposal">Hours 0–48</span></div>
+          <p class="decision-contract-intro">The teams start together instead of waiting for one function to finish before the next begins. Product brings the evidence together and keeps the work focused.</p>
+          <div class="workstream-grid">
+            <div class="workstream"><small>Product</small><strong>Run the decision process and partner response.</strong><span>Set the rules for the decision, maintain one view of the problem, keep the scope focused and recommend where the squad commits after 48 hours.</span></div>
+            <div class="workstream"><small>Data</small><strong>Compare customers fairly.</strong><span>Check that the counts match, compare customers after the same amount of time, split the results by partner and account-opening model, and estimate how many customers can realistically recover.</span></div>
+            <div class="workstream"><small>Engineering</small><strong>Trace the journey end to end.</strong><span>Follow account state, readiness, handoff and deposit events; reproduce the failure and find ways to limit harm immediately.</span></div>
+            <div class="workstream conditional"><small>Design + research · when relevant</small><strong>Test the customer explanation, not a preferred solution.</strong><span>Review the partner promise, support evidence and customer confusion only when the technical path is healthy or the evidence points to an expectation problem.</span></div>
+            <div class="workstream"><small>Compliance + operations</small><strong>Help shape the response from the start.</strong><span>Assess affected customers, required checks, recovery limits and approved backup options from Day 0—not only just before launch.</span></div>
+          </div>
+        </article>
+
+        <article class="card reveal added" aria-labelledby="scope-title">
+          <div class="card-head"><h3 id="scope-title">Keep the two-week commitment focused</h3><span class="tag proposal">What is in and out</span></div>
+          <div class="scope-contract">
+            <div class="scope-statement"><small>The commitment</small><strong>One confirmed cause.</strong><p>Limit the harm or fix the cause, measure the result and help eligible affected customers continue where it is safe and permitted.</p></div>
+            <div class="scope-sides">
+              <div class="scope-side"><h4>Inside the two-week response</h4><ul><li>The action needed to limit harm or fix the cause</li><li>One response supported by evidence</li><li>Recovery for an identifiable group of eligible customers</li><li>Tracking, named owners and rollback readiness</li></ul></div>
+              <div class="scope-side out"><h4>Outside this commitment</h4><ul><li>A broad redesign of the partner journey</li><li>Several unproven solutions being built at once</li><li>Long-term partner-platform improvements</li><li>Experience work before the customer problem is confirmed</li></ul></div>
+            </div>
+          </div>
+        </article>
+
+        <div class="roadmap reveal">
+          <div class="phase"><div class="phase-card"><span class="phase-time">Phase 1 · Hours 0–48</span><h3>Confirm the cause and limit harm</h3><ul><li>Run the five areas of work at the same time</li><li>Compare customers after the same amount of time</li><li>Find where and why the journey breaks</li><li>Pause or limit any serious identity, account or required-check risk immediately</li></ul><div class="phase-gate"><b>48-hour decision</b>Choose one cause, one owner and one response—or decide not to build.</div></div></div>
+          <div class="phase"><div class="phase-card"><span class="phase-time">Phase 2 · Days 3–6</span><h3>Commit to one response</h3><ul><li>Return to the last working setup, fix the issue, improve the process or run one focused test</li><li>Include Compliance and Operations before the response is finalized</li><li>Name delivery, monitoring and rollback owners</li><li>Identify the smallest affected group large enough to show whether the change works</li></ul><div class="phase-gate"><b>Before customers see it</b>Required checks have passed, the team can measure the result, everyone knows their role and rollback is ready.</div></div></div>
+          <div class="phase"><div class="phase-card"><span class="phase-time">Phase 3 · Days 7–10</span><h3>Start small and recover safely</h3><ul><li>Begin with the smallest affected group large enough to show whether the change works</li><li>Watch customer benefit and harm together</li><li>Track eligible customers who were previously stuck as a separate group</li><li>Stop immediately if a required safety check fails</li></ul><div class="phase-gate"><b>Limited rollout</b>Reaching more customers requires a clear decision; it does not happen automatically.</div></div></div>
+          <div class="phase"><div class="phase-card"><span class="phase-time">Phase 4 · Days 11–14</span><h3>Review the early results and decide</h3><ul><li>Compare D1, D3 and D7 results after the same amount of time since registration</li><li>Review timing, deposits and what happened to recovered customers</li><li>Separate what was delivered from the 14-day result, which is not ready yet</li><li>Choose whether to hold, expand or roll back</li></ul><div class="phase-gate"><b>Day-14 decision</b>State the decision and the date when the full result will be ready.</div></div></div>
+        </div>
+
+        <article class="card reveal added" aria-labelledby="gates-title">
+          <div class="card-head"><h3 id="gates-title">Three decisions keep the squad focused</h3><span class="tag proposal">Decision points</span></div>
+          <div class="decision-gates">
+            <div class="execution-gate"><small>At 48 hours</small><strong>Which problem should the squad solve?</strong><p>The evidence should explain the drop, show where it occurs and suggest that enough customers can be recovered safely.</p><div class="gate-owner">Head of Product decides; Engineering and Data confirm the cause.</div></div>
+            <div class="execution-gate"><small>Before rollout</small><strong>Are we ready to put customers through it?</strong><p>All required checks must pass. The team must be able to see both success and harm, know who owns each action and roll back immediately.</p><div class="gate-owner">Product recommends; Engineering and Compliance/Risk approve the areas they own.</div></div>
+            <div class="execution-gate"><small>On Day 14</small><strong>Do we hold, expand or roll back?</strong><p>Use what was delivered, early results from fair comparisons, timing, customer harm and results for recovered customers—not an unfinished 14-day conversion result.</p><div class="gate-owner">Head of Product decides and publishes the date when the full result will be ready.</div></div>
+          </div>
+          <div class="rollout-rule"><strong>Rollout rule:</strong> do not invent a fixed percentage. Start with the smallest affected group large enough to show whether the change works. Roll back immediately if identities or accounts may be wrong, a required compliance check fails or customers may be seriously harmed.</div>
+        </article>
+        <article class="card reveal added"><div class="card-head"><h3>When will the full 14-day result be ready?</h3><span class="tag hypothesis">Example timing</span></div><div class="day14-line"><div><b>Day 0</b><span>The investigation begins</span></div><div><b>Day 7</b><span>The first customers see a possible fix</span></div><div><b>Day 14</b><span>The team reviews the available D1, D3 and D7 results and reports what was delivered</span></div><div><b>Day 21</b><span>The first customers who saw the change complete the full 14-day window</span></div></div><p class="added-callout"><strong>By Day 14, I would not claim that conversion has fully recovered.</strong> The readout should show what improved, what is still uncertain and when the full result will be ready.</p></article>
       </div>
     </section>
 
@@ -917,14 +1011,36 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="section-index">05 · Customer experience</div>
-          <div><h2>Validate the customer problem before prescribing UX.</h2><p class="section-intro">Even if the technical handoff is working, customers may still drop off because the journey doesn’t match what they expected when they signed up through the partner. So before changing the product, we should first confirm whether that expectation gap is actually driving the decline.</p></div>
+          <div><h2>Confirm the customer problem before changing the experience.</h2><p class="section-intro">Even if the technical handoff works, customers may still leave because the journey does not match what they expected when they signed up through the partner. Before changing the product, we should confirm that this confusion is actually driving the decline.</p></div>
         </div>
-        <article class="card reveal"><div class="card-head"><h3>Bank-partner expectation mismatch</h3><span class="tag hypothesis">Hypothetical example</span></div><div class="experiment-grid"><div class="experiment-signal"><span class="tag hypothesis">Competing mechanism</span><blockquote>“I expected to finish inside my bank app. Why am I being sent to Ajaib?”</blockquote><p>A technically healthy handoff can still lose customers when it does not match the experience they were promised.</p></div><div class="added-grid"><div class="added-tile"><small>IMMEDIATE RESPONSE</small><b>Explain the next step and re-engage eligible customers</b><span>Use permitted channels to explain why the journey continues in Ajaib and what the customer can do once the account is ready.</span></div><div class="added-tile"><small>EXPERIMENT</small><b>Test whether a clearer value proposition changes behavior</b><span>Product and Design develop the message, Data identifies eligible customers, and Operations, CRM and the partner coordinate delivery subject to consent.</span></div><div class="added-tile"><small>MEASURE</small><b>Measure incremental funding, not message clicks</b><span>Compare first-deposit initiation and success with a suitable control group.</span></div><div class="added-tile"><small>LEARN</small><b>Use the result to improve the longer-term journey</b><span>Apply what we learn to the Ajaib landing experience and the expectations set on the partner side.</span></div></div></div><p class="added-note">Any customers recovered after their original 14-day window should be reported separately from the official case KPI.</p></article>
-        <article class="activation-prototype reveal" aria-labelledby="prototype-title">
-          <div class="prototype-ambient" aria-hidden="true"><div class="ambient-app"><div class="ambient-bar"></div><div class="ambient-balance"></div><div class="ambient-actions"><span></span><span></span><span></span></div><div class="ambient-list"><span></span><span></span><span></span></div></div></div>
+        <article class="card reveal"><div class="card-head"><h3>Customers may not understand the move from the partner to Ajaib</h3><span class="tag hypothesis">Possible example</span></div><div class="experiment-grid"><div class="experiment-signal"><span class="tag hypothesis">Another possible cause</span><blockquote>“I expected to finish inside my bank app. Why am I being sent to Ajaib?”</blockquote><p>The technical handoff can work correctly while customers still leave because the journey does not match what they expected.</p></div><div class="added-grid"><div class="added-tile"><small>IMMEDIATE RESPONSE</small><b>Explain the next step and help eligible customers continue</b><span>Use approved channels to explain why the journey continues in Ajaib and what the customer can do once the account is ready.</span></div><div class="added-tile"><small>TEST</small><b>See whether a clearer explanation changes behavior</b><span>Product and Design create the message, Data identifies eligible customers, and Operations, CRM and the partner coordinate delivery with the customer’s permission.</span></div><div class="added-tile"><small>MEASURE</small><b>Measure additional first deposits, not message clicks</b><span>Compare first-deposit attempts and completed deposits with a similar group that did not receive the new message.</span></div><div class="added-tile"><small>LEARN</small><b>Use the result to improve the longer-term journey</b><span>Apply what we learn to the Ajaib landing experience and to what the partner tells customers.</span></div></div></div><p class="added-note">Report customers recovered after their original 14-day window separately from the official case KPI.</p></article>
+        <article class="card reveal added" aria-labelledby="intervention-title">
+          <div class="card-head"><h3 id="intervention-title">The response depends on what we find</h3><span class="tag proposal">Choose after diagnosis</span></div>
+          <p class="decision-contract-intro">Do not redesign the customer journey until the team knows what is failing. Different problems need different responses.</p>
+          <div class="intervention-paths">
+            <div class="intervention-path"><small>Account processing or readiness problem</small><strong>Fix the account or technical path.</strong><span>Restore the correct account state, processing time or handoff before changing customer messaging.</span></div>
+            <div class="intervention-path"><small>Message did not reach the customer</small><strong>Restore customer communication.</strong><span>Fix message delivery and timing, help eligible customers continue, then measure completed deposits rather than message clicks.</span></div>
+            <div class="intervention-path"><small>Customer expected a different journey</small><strong>Test a clearer next step.</strong><span>Only explore the concept below if research shows that customers are confused about where and how to continue.</span></div>
+          </div>
+        </article>
+        <details class="prototype-disclosure reveal">
+          <summary>
+            <span class="prototype-summary-copy"><small>Optional concept drill-down</small><strong>Explore a response to partner-to-Ajaib handoff confusion</strong><span>This assumes customers complete the partner-led KYC journey, reach approval or readiness, but do not understand why they must continue in Ajaib or where to make their first deposit.</span></span>
+            <span class="prototype-summary-action">View concept</span>
+          </summary>
+        <article class="activation-prototype" aria-labelledby="prototype-title">
           <div class="prototype-header">
-            <div><span class="prototype-kicker">Illustrative proposal, only if handoff confusion is validated</span><h3 id="prototype-title">From approval to activation.</h3><p>This is one possible landing pattern. The blue layer represents the Ajaib environment, while the foreground highlights the customer decision we are trying to improve at each step.</p></div>
-            <span class="concept-label">Conceptual Ajaib environment</span>
+            <div><span class="prototype-kicker">Hypothetical · cross-app handoff confusion after approval</span><h3 id="prototype-title">From partner approval to first deposit.</h3><p>This concept assumes the account path is functioning, but eligible customers lose context when the journey moves from the partner into Ajaib.</p></div>
+            <span class="concept-label">Concept screens · not interactive</span>
+          </div>
+          <div class="prototype-situation" aria-label="Situation assumed by this concept">
+            <small>Situation this concept assumes</small>
+            <div class="situation-flow">
+              <div class="situation-step"><small>01 · Partner journey</small><strong>The customer binds the account and completes the partner-led KYC steps.</strong><span>The acquisition promise may imply that the journey will continue in the partner environment.</span></div>
+              <div class="situation-step"><small>02 · Approval or readiness</small><strong>The account is approved or ready for the next action.</strong><span>The technical state is healthy enough for the customer to continue toward funding.</span></div>
+              <div class="situation-step"><small>03 · Handoff breaks down</small><strong>The customer does not understand the switch to Ajaib or where to continue.</strong><span>Status, context or the exact first-deposit action is unclear, so the customer leaves without funding.</span></div>
+            </div>
+            <div class="prototype-evidence-gate"><strong>Use this response only if:</strong> customers still drop off when compared after the same amount of time, the account and deposit path are working, and customer evidence points to confusion when the journey moves from the partner to Ajaib.</div>
           </div>
           <div class="prototype-grid">
             <div class="prototype-tabs" role="tablist" aria-label="Proposed activation journey">
@@ -935,26 +1051,26 @@
             </div>
             <div class="prototype-focus">
               <div class="prototype-panel" id="prototype-panel-1" role="tabpanel" aria-labelledby="prototype-tab-1">
-                <div class="prototype-phone" aria-hidden="true"><div class="prototype-screen"><div class="app-topline"><span class="app-wordmark">ajaib</span><span class="app-icon">↗</span></div><div class="app-card"><div class="app-status">Application received</div><h4>Continue your account setup in Ajaib.</h4><p>We received your information from Partner X. Review your status and complete any remaining steps.</p><button class="app-primary" type="button" tabindex="-1">Continue in Ajaib</button><div class="app-caption">See what’s complete and what still needs attention</div></div></div></div>
+                <div class="prototype-phone" aria-hidden="true"><div class="prototype-screen"><div class="concept-screen-note">Concept screen · not interactive</div><div class="app-topline"><span class="app-wordmark">ajaib</span><span class="app-icon">↗</span></div><div class="app-card"><div class="app-status">Application received</div><h4>Continue your account setup in Ajaib.</h4><p>We received your information from your partner. Review your status and complete any remaining steps.</p><div class="app-primary">Continue in Ajaib</div><div class="app-caption">See what’s complete and what still needs attention</div></div></div></div>
                 <aside class="prototype-note"><small>UX decision</small><h4>Explain the handoff before the customer switches apps.</h4><p>Tell customers what information is moving, who owns the next step and what they should expect when Ajaib opens.</p></aside>
               </div>
               <div class="prototype-panel" id="prototype-panel-2" role="tabpanel" aria-labelledby="prototype-tab-2" hidden>
-                <div class="prototype-phone" aria-hidden="true"><div class="prototype-screen"><div class="app-topline"><span class="app-wordmark">ajaib</span><span class="app-icon">✓</span></div><div class="app-card"><div class="app-status">Account ready</div><h4>You’re ready to invest.</h4><p>Your KYC is approved and your investment account is active.</p><button class="app-primary" type="button" tabindex="-1">Make first deposit</button><div class="app-progress"><div><span>KYC review</span><b>Complete</b></div><div><span>Account activation</span><b>Complete</b></div></div></div></div></div>
+                <div class="prototype-phone" aria-hidden="true"><div class="prototype-screen"><div class="concept-screen-note">Concept screen · not interactive</div><div class="app-topline"><span class="app-wordmark">ajaib</span><span class="app-icon">✓</span></div><div class="app-card"><div class="app-status">Account ready</div><h4>You’re ready to invest.</h4><p>Your KYC is approved and your investment account is active.</p><div class="app-primary">Make first deposit</div><div class="app-progress"><div><span>KYC review</span><b>Complete</b></div><div><span>Account activation</span><b>Complete</b></div></div></div></div></div>
                 <aside class="prototype-note"><small>UX decision</small><h4>Show one consistent status across both companies.</h4><p>Translate backend readiness into a single plain-language state, so customers do not see “approved” in one place and “pending” in another.</p></aside>
               </div>
               <div class="prototype-panel" id="prototype-panel-3" role="tabpanel" aria-labelledby="prototype-tab-3" hidden>
-                <div class="prototype-phone" aria-hidden="true"><div class="prototype-screen"><div class="app-topline"><span class="app-wordmark">ajaib</span><span class="app-icon">＋</span></div><div class="app-card"><div class="app-status">Account active</div><h4>Make your first deposit.</h4><p>Fund your active investment account. You can review everything before confirming.</p><div class="amount-box">Rp 1,000,000</div><div class="bank-row"><span class="bank-mark">B</span><span>Transfer from your bank</span></div><button class="app-primary" type="button" tabindex="-1">Continue</button></div></div></div>
+                <div class="prototype-phone" aria-hidden="true"><div class="prototype-screen"><div class="concept-screen-note">Concept screen · not interactive</div><div class="app-topline"><span class="app-wordmark">ajaib</span><span class="app-icon">＋</span></div><div class="app-card"><div class="app-status">Account active</div><h4>Make your first deposit.</h4><p>Fund your active investment account. You can review everything before confirming.</p><div class="amount-box">Choose deposit amount</div><div class="bank-row"><span class="bank-mark">B</span><span>Select a funding method</span></div><div class="app-primary">Continue</div></div></div></div>
                 <aside class="prototype-note"><small>UX decision</small><h4>Take customers to the next action, not the homepage.</h4><p>Preserve their context through authentication or app installation, then bring eligible customers directly to the correct account and deposit action.</p></aside>
               </div>
               <div class="prototype-panel" id="prototype-panel-4" role="tabpanel" aria-labelledby="prototype-tab-4" hidden>
-                <div class="prototype-phone" aria-hidden="true"><div class="prototype-screen"><div class="app-topline"><span class="app-wordmark">ajaib</span><span class="app-icon">?</span></div><div class="app-card"><div class="recovery-icon">↻</div><h4>Your progress is safe.</h4><p>We couldn’t finish the handoff. Your approved KYC is saved, so you can retry without starting over.</p><button class="app-primary" type="button" tabindex="-1">Try again</button><button class="app-secondary" type="button" tabindex="-1">Get help</button><div class="app-caption">Reference · AJB-2048</div></div></div></div>
+                <div class="prototype-phone" aria-hidden="true"><div class="prototype-screen"><div class="concept-screen-note">Concept screen · not interactive</div><div class="app-topline"><span class="app-wordmark">ajaib</span><span class="app-icon">?</span></div><div class="app-card"><div class="recovery-icon">↻</div><h4>Your progress is safe.</h4><p>We couldn’t finish the handoff. Your approved KYC is saved, so you can retry without starting over.</p><div class="app-primary">Try again</div><div class="app-secondary">Get help</div><div class="app-caption">A support reference would appear here</div></div></div></div>
                 <aside class="prototype-note"><small>UX decision</small><h4>Help customers recover without making them start again.</h4><p>Preserve the approved state, explain the failure honestly and provide a clear retry path, support option and reference number.</p></aside>
               </div>
             </div>
           </div>
         </article>
-
-        <p class="added-note">This prototype is directional rather than a predetermined solution. The final experience will depend on the validated failure mechanism, the confirmed partnership model and the applicable rules for consent, data reuse, account readiness and authentication.</p>
+        </details>
+        <p class="added-note">The final experience will still depend on the confirmed cause, the partner’s account-opening model and the relevant rules for consent, data reuse, account readiness and login.</p>
       </div>
     </section>
 
@@ -962,27 +1078,27 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div class="section-index">06 · Operating model</div>
-          <div><h2>Move fast, without compromising customer trust.</h2><p class="section-intro">My role here is to decide where the squad can have the most impact, be explicit about any commitment we may need to delay and make sure everyone knows who has the final call on release readiness.</p></div>
+          <div><h2>Move quickly without putting customer trust at risk.</h2><p class="section-intro">My role is to put the squad where it can have the most impact, be clear about any work we may need to delay and make sure everyone knows who has the final say before launch.</p></div>
         </div>
-        <article class="card reveal"><div class="card-head"><h3>When should we change an existing commitment?</h3><span class="tag fact">Case constraint</span></div><div class="resource-choice"><div class="resource-call"><span class="tag proposal">My initial recommendation</span><strong>Redirect one squad now.</strong><p>Use the first 48 hours to validate the mechanism, contain customer impact and select the intervention with the strongest evidence. We should change another commitment only if added capacity would materially improve the outcome.</p></div><div class="tradeoff-list"><div><b>Stay with one squad</b>Stay with the current squad when customer exposure is contained and that squad owns the critical path.</div><div><b>Change a commitment</b>Add capacity when customer, compliance or account-integrity risk cannot be contained.</div><div><b>Recoverable impact</b>Prioritize additional capacity only when the validated mechanism affects substantial recoverable volume.</div><div><b>Real acceleration</b>Bring in another squad when the work can run in parallel and added capacity will materially shorten recovery.</div><div><b>Opportunity cost</b>Make the trade-off only when the expected recovery and avoided risk outweigh the value of the commitment we would delay.</div><div><b>Leadership call</b>Base the decision on the 48-hour evidence packet, not on funnel deterioration alone.</div></div></div></article>
+        <article class="card reveal"><div class="card-head"><h3>When should we delay other work to add another squad?</h3><span class="tag fact">Case constraint</span></div><div class="resource-choice"><div class="resource-call"><span class="tag proposal">My initial recommendation</span><strong>Redirect one squad now.</strong><p>Use the first 48 hours to confirm the cause, limit customer impact and choose the response most likely to work. We should delay other work only if adding people would clearly improve the result.</p></div><div class="tradeoff-list"><div><b>Stay with one squad</b>Keep one squad when customer impact is under control and that squad owns the work that matters most.</div><div><b>Add another squad</b>Add people when customer, compliance or account-safety risks are still not under control.</div><div><b>Customers we can recover</b>Add capacity only when the confirmed problem affects enough customers who can still complete the journey.</div><div><b>Faster recovery</b>Add a squad when work can happen in parallel and more people will clearly shorten recovery time.</div><div><b>What we would delay</b>Make the trade-off only when the expected recovery and lower risk are worth more than the work we would pause.</div><div><b>Leadership call</b>Base the decision on evidence collected in the first 48 hours, not on the funnel drop alone.</div></div></div></article>
 
-        <article class="card reveal added"><div class="card-head"><h3>Release-quality framework</h3><span class="tag proposal">Non-negotiable</span></div><div class="added-grid"><div><h3 style="margin-bottom:14px">Conditions before exposure</h3><div class="quality-list"><div class="quality"><span class="check">✓</span><div><strong>Identity and account state are correct</strong><small>There is no unresolved material risk of duplicate accounts or incorrect processing.</small></div></div><div class="quality"><span class="check">✓</span><div><strong>Mandatory controls have passed</strong><small>All applicable security, regulatory and compliance requirements are satisfied.</small></div></div><div class="quality"><span class="check">✓</span><div><strong>Failure and recovery paths have been tested</strong><small>Timeouts, retries, duplicates, fallbacks and recovery behavior work as intended.</small></div></div></div></div><div><h3 style="margin-bottom:14px">Controlled rollout</h3><div class="quality-list"><div class="quality"><span class="check">✓</span><div><strong>Success and guardrail metrics are observable</strong><small>The team can see both benefit and harm before increasing exposure.</small></div></div><div class="quality"><span class="check">✓</span><div><strong>Release and rollback owners are named</strong><small>Monitoring, escalation and stop conditions are ready before launch.</small></div></div><div class="quality"><span class="check">✓</span><div><strong>Increasing exposure requires an explicit decision</strong><small>The rollout should not expand automatically while the evidence is incomplete.</small></div></div></div></div></div><div class="ownership-strip"><div><b>Product</b><span>Recommends the priority and launch decision</span></div><div><b>Engineering</b><span>Owns technical readiness and rollback execution</span></div><div><b>Compliance / Risk</b><span>Owns approval of mandatory controls</span></div></div></article>
+        <article class="card reveal added"><div class="card-head"><h3>Checks required before launch</h3><span class="tag proposal">Must pass</span></div><div class="added-grid"><div><h3 style="margin-bottom:14px">Before customers see the change</h3><div class="quality-list"><div class="quality"><span class="check">✓</span><div><strong>Identity and account details are correct</strong><small>There is no serious open risk of duplicate accounts or incorrect processing.</small></div></div><div class="quality"><span class="check">✓</span><div><strong>Required controls have passed</strong><small>All relevant security, legal and compliance checks are complete.</small></div></div><div class="quality"><span class="check">✓</span><div><strong>Failure and recovery paths have been tested</strong><small>Timeouts, retries, duplicates, fallbacks and recovery steps work as intended.</small></div></div></div></div><div><h3 style="margin-bottom:14px">Limited rollout</h3><div class="quality-list"><div class="quality"><span class="check">✓</span><div><strong>The team can see both success and harm</strong><small>We can spot whether the change is helping or creating new problems before it reaches more customers.</small></div></div><div class="quality"><span class="check">✓</span><div><strong>Launch and rollback owners are named</strong><small>Monitoring, escalation and stop rules are ready before launch.</small></div></div><div class="quality"><span class="check">✓</span><div><strong>Reaching more customers requires a decision</strong><small>The rollout should not expand automatically while the results are still unclear.</small></div></div></div></div></div><div class="ownership-strip"><div><b>Product</b><span>Recommends the priority and launch decision</span></div><div><b>Engineering</b><span>Owns technical readiness and rollback</span></div><div><b>Compliance / Risk</b><span>Approves required controls</span></div></div></article>
 
-        <article class="card reveal added"><div class="card-head"><h3>Beyond the two-week recovery</h3><span class="tag proposal">Post-incident opportunities</span></div><h3 style="font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:500;line-height:1.08;max-width:850px">Prevent the same failure across future partner integrations.</h3><div class="capability-grid"><div><b>Standard partner API contracts</b></div><div><b>Canonical account-state definitions</b></div><div><b>Versioning and partner certification</b></div><div><b>Synthetic end-to-end monitoring</b></div><div><b>Reusable retry and recovery</b></div></div><p class="added-note">These are opportunities to evaluate after the immediate recovery. We should invest only where the incident reveals a recurring cross-partner problem and the expected value is stronger than other roadmap priorities.</p></article>
+        <article class="card reveal added"><div class="card-head"><h3>After the two-week recovery</h3><span class="tag proposal">What we could improve next</span></div><h3 style="font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:500;line-height:1.08;max-width:850px">Reduce the chance of the same problem happening with future partners.</h3><div class="capability-grid"><div><b>Standard rules for partner APIs</b></div><div><b>One shared meaning for each account status</b></div><div><b>Version checks and partner testing</b></div><div><b>Automatic tests of the full journey</b></div><div><b>Reusable retry and recovery steps</b></div></div><p class="added-note">We should review these ideas after the immediate recovery. Invest only if the problem could happen across several partners and the expected value is stronger than other roadmap work.</p></article>
       </div>
     </section>
     <section id="measurement">
       <div class="wrap">
-        <div class="section-head reveal"><div class="section-index">07 · Outcome measurement</div><div><h2>By Day 14, prove delivery. Schedule the mature outcome.</h2><p class="section-intro">On Day 14, the readout should separate what we have delivered from what the data can already prove. It should cover the early comparable signals, the customers we recovered and the exact date when the full outcome will be mature.</p></div></div>
-        <article class="card reveal"><div class="card-head"><h3>Executive scorecard · Day 14</h3><span class="tag proposal">Report</span></div><div class="scorecard-grid"><div class="score-item"><small>01 · Mechanism</small><b>What caused the decline, and what remains uncertain?</b><span>State what we know, how confident we are and which explanations remain open.</span></div><div class="score-item"><small>02 · Delivery</small><b>What did we deploy or contain?</b><span>Report current exposure, rollback readiness and any unresolved dependency.</span></div><div class="score-item"><small>03 · Early funnel</small><b>What do the comparable D1, D3 and D7 signals show?</b><span>Compare cohorts only when they have equivalent age and follow-up time.</span></div><div class="score-item"><small>04 · Time</small><b>How long do approval, readiness and deposit take?</b><span>Use p50 and p90 where useful, segmented by partner and operating model.</span></div><div class="score-item"><small>05 · Recovery</small><b>How many previously stranded customers recovered?</b><span>Report the customer count and incremental funding separately from the original KPI.</span></div><div class="score-item"><small>06 · Maturity</small><b>When will the full outcome be ready?</b><span>If the first customers see the change on Day 7, the earliest complete registration-based read is Day 21.</span></div></div><p class="added-callout"><strong>Day 14 is a decision readout. It should not be presented as a mature conversion result unless the observation window is complete.</strong></p></article>
+        <div class="section-head reveal"><div class="section-index">07 · Outcome measurement</div><div><h2>By Day 14, show what changed and when the full result will be ready.</h2><p class="section-intro">The Day 14 readout should separate the work we completed from what the data can already prove. It should show the early results after a fair comparison, how many customers we helped recover and the date when the full 14-day result will be ready.</p></div></div>
+        <article class="card reveal"><div class="card-head"><h3>Executive scorecard · Day 14</h3><span class="tag proposal">Report</span></div><div class="scorecard-grid"><div class="score-item"><small>01 · Cause</small><b>What caused the decline, and what is still uncertain?</b><span>State what we know, how confident we are and which questions are still open.</span></div><div class="score-item"><small>02 · Delivery</small><b>What did we launch, fix or limit?</b><span>Report how many customers are currently affected, whether we can roll back safely and what still depends on another team.</span></div><div class="score-item"><small>03 · Early funnel</small><b>What do the D1, D3 and D7 results show?</b><span>Compare customers only after they have had the same amount of time to progress.</span></div><div class="score-item"><small>04 · Time</small><b>How long do approval, account readiness and deposit take?</b><span>Show both typical and slow-case times by partner and operating model.</span></div><div class="score-item"><small>05 · Recovery</small><b>How many previously stuck customers recovered?</b><span>Report the number of customers and any additional deposits separately from the original case KPI.</span></div><div class="score-item"><small>06 · Full result</small><b>When will the full 14-day result be ready?</b><span>If the first customers see the change on Day 7, the earliest complete result is Day 21.</span></div></div><p class="added-callout"><strong>Day 14 is a decision update. We should not claim that conversion has fully recovered until customers have had the complete 14-day window.</strong></p></article>
 
-        <div class="added-grid"><article class="card reveal added"><span class="tag fact">Case KPI</span><h3 style="margin:14px 0">First deposit within 14 days</h3><p>The earlier cohort reached 45%, while the latest reached 29%. Any comparison should keep the registration start, cohort definition, partner and model mix, and observation age consistent.</p></article><article class="card reveal added"><span class="tag proposal">Additional instrumentation</span><h3 style="margin:14px 0">Acquire valuable investors</h3><p>The case does not provide first-investment figures, so these measures should be introduced as proposed instrumentation rather than presented as existing evidence.</p></article></div>
+        <div class="added-grid"><article class="card reveal added"><span class="tag fact">Case KPI</span><h3 style="margin:14px 0">First deposit within 14 days</h3><p>The earlier customer group reached 45%, while the latest reached 29%. For a fair comparison, both groups should use the same start date rule, partner mix, operating-model mix and time since registration.</p></article><article class="card reveal added"><span class="tag proposal">Future measures</span><h3 style="margin:14px 0">Acquire valuable long-term investors</h3><p>The case does not include first-investment figures. We should present these as measures to add later, not as evidence we already have.</p></article></div>
 
-        <article class="card reveal added"><div class="card-head"><h3>Connect the case KPI to business value</h3><span class="tag proposal">Next level focus</span></div><div class="business-funnel"><div class="business-stage"><small>Case KPI</small><b>First deposit / bound</b><span>Within 14 days</span></div><div class="business-stage"><small>Activation</small><b>First investment / bound</b><span>Comparable customer age</span></div><div class="business-stage"><small>Efficiency</small><b>First investment / deposited</b><span>Deposit → investment</span></div><div class="business-stage"><small>Value</small><b>Median initial deposit</b><span>View by partner and campaign</span></div><div class="business-stage"><small>Economics</small><b>Reactivation cost / incremental value</b><span>Include later activity where it is observable</span></div></div><p class="added-note">Over time, the scorecard should also track how quickly customers make their first investment, how performance varies by partner and campaign, and whether those customers continue to invest. Every comparison should use equivalent observation windows and customer ages.</p><p class="added-callout"><strong>The commercial question is broader than deposit conversion:</strong> if first-investment outcomes and the acquisition of economically valuable investors remain healthy, is returning to the historical 45% still the best use of the squad?</p></article>
+        <article class="card reveal added"><div class="card-head"><h3>Connect the case KPI to business value</h3><span class="tag proposal">Next level focus</span></div><div class="business-funnel"><div class="business-stage"><small>Case KPI</small><b>First deposit / bound</b><span>Within 14 days</span></div><div class="business-stage"><small>Activation</small><b>First investment / bound</b><span>Same time since registration</span></div><div class="business-stage"><small>Efficiency</small><b>First investment / deposited</b><span>Deposit → investment</span></div><div class="business-stage"><small>Value</small><b>Typical first deposit</b><span>View by partner and campaign</span></div><div class="business-stage"><small>Economics</small><b>Recovery cost / added value</b><span>Include later activity where we can track it</span></div></div><p class="added-note">Over time, the scorecard should also track how quickly customers make their first investment, how results vary by partner and campaign, and whether those customers continue to invest. Every comparison should give customers the same amount of time.</p><p class="added-callout"><strong>The business question is broader than deposit conversion:</strong> if first investments and the number of valuable long-term investors remain healthy, is returning to the historical 45% still the best use of the squad?</p></article>
       </div>
     </section>
     <footer class="closing">
-      <div class="wrap reveal"><p class="eyebrow">The leadership stance</p><h2>Restore the baseline. Build resilience. Then improve beyond it.</h2><p>Over these two weeks, my responsibility is to recover the highest-impact break safely, investigate upstream and downstream in parallel, bring eligible stranded customers back into the journey and leave the system more resilient than we found it.</p><p class="source-note">The case figures and constraints are simulated interview material. All calculated rates come from the provided cohort counts.</p></div>
+      <div class="wrap reveal"><p class="eyebrow">The leadership stance</p><h2>Fix the immediate problem. Make the journey safer. Then improve it.</h2><p>Over these two weeks, my responsibility is to fix the biggest confirmed problem safely, check the rest of the journey at the same time, help eligible customers who were stuck continue and reduce the chance of the same issue happening again.</p><p class="source-note">The case figures and constraints are simulated interview material. All calculated rates come from the customer counts provided in the case.</p></div>
     </footer>
   </main>
 
